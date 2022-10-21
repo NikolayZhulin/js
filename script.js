@@ -57,19 +57,30 @@
 //   return true;
 // }
 
-let login = prompt("Who here?");
+// let login = prompt("Who here?");
 
-if (login == "Admin") {
-  let password = prompt("password");
-  if (password === "I am main") {
-    alert("hello");
-  } else if (password === null || password === "") {
-    alert("cansel");
-  } else {
-    alert("Invalid password");
-  }
-} else if (login === null || login === "") {
-  alert("cansel");
-} else {
-  alert("i dont know you");
+// if (login == "Admin") {
+//   let password = prompt("password");
+//   if (password === "I am main") {
+//     alert("hello");
+//   } else if (password === null || password === "") {
+//     alert("cansel");
+//   } else {
+//     alert("Invalid password");
+//   }
+// } else if (login === null || login === "") {
+//   alert("cansel");
+// } else {
+//   alert("i dont know you");
+// }
+
+// for (let i = 1; i <= 10; i++) {
+//   if (i % 2 != 0) continue;
+//   console.log(i);
+// }
+
+let i = 0;
+while (i < 3) {
+  console.log(`number ${i}`);
+  i++;
 }
