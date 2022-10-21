@@ -33,3 +33,14 @@ if (nameJS == "ecmascript") {
 } else {
   alert("ne znaete?");
 }
+
+let result = a + b < 4 ? "Malo" : "Mnogo";
+
+let message =
+  login == "sotrudnik"
+    ? "Privet"
+    : login == "Director"
+    ? "Zdravstvuite"
+    : login == ""
+    ? "Net logina"
+    : "";
