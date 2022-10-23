@@ -185,3 +185,7 @@ function solution(str) {
 }
 
 console.log(solution("world"));
+
+function greet(name) {
+  return `Hello, ${name} how are you doing today?`;
+}
