@@ -208,11 +208,28 @@
 
 // console.log(paperwork(5, 5));
 
-let arr = [];
-let i = 1;
-while (i <= 20) {
-  if (i % 2 == 0) arr.push(i);
+// let arr = [];
+// let i = 1;
+// while (i <= 20) {
+//   if (i % 2 == 0) arr.push(i);
 
-  i++;
+//   i++;
+// }
+// console.log(arr);
+
+// for (let i = 30; i >= 1; i--) {
+//   if (i % 3 == 0) console.log(i);
+// }
+
+// let arr = [];
+// for (let i = 0; i <= 10; i++) {
+//   console.log(i ** 2);
+// }
+// console.log(arr);
+
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 16];
+let count = 0;
+for (i = 0; i < arr.length; i++) {
+  if (arr[i] % 2 == 0) count++;
 }
-console.log(arr);
+console.log(count);
