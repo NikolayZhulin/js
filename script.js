@@ -227,9 +227,67 @@
 // }
 // console.log(arr);
 
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 16];
-let count = 0;
-for (i = 0; i < arr.length; i++) {
-  if (arr[i] % 2 == 0) count++;
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 16];
+// let count = 0;
+// for (i = 0; i < arr.length; i++) {
+//   if (arr[i] % 2 == 0) count++;
+// }
+// console.log(count);
+
+// let str = "";
+// for (i = 0; i <= 10; i++) {
+//   console.log((str += "*"));
+// }
+
+// let count = 0;
+// let out = document.querySelector(".outer");
+// let flag = 3;
+
+// while (count < 4) {
+//   let count1 = 0;
+//   while (count1 < 4) {
+//     if (count1 < flag) {
+//       out.innerHTML += "&nbsp";
+//     } else {
+//       out.innerHTML += "* ";
+//     }
+//     count1++;
+//   }
+//   flag--;
+//   count++;
+//   out.innerHTML += "<br>";
+// }
+
+// function findAverage(array) {
+//     let summ = 0;
+//     for (i = 0; i < array.length; i++){
+//         arra
+//     }
+//     return 0;
+//   }
+
+let location1 = 1;
+let location2 = 2;
+let location3 = 3;
+let guess;
+let guesses = 0;
+let hits = 0;
+let issunk = false;
+
+while (issunk === false) {
+  guess = prompt("vvedi koordinati");
+  if (guess < 0 || guess > 6) {
+    alert("nekorrektno");
+  } else {
+    guesses += 1;
+    if (guess == location1 || guess == location2 || guess == location3) {
+      alert("popadanie");
+      hits += 1;
+      console.log(hits);
+      if (hits == 3) {
+        issunk = true;
+        alert("korabl potoplen");
+      }
+    }
+  }
 }
-console.log(count);
