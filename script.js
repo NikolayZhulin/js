@@ -424,21 +424,81 @@
 
 // console.log(multiplyNumeric(menu));
 
-let calculator = {
-  read() {
-    return (
-      (this.one = prompt("vvedi pervoe chislo")),
-      (this.two = prompt("vvedi vtoroe chislo"))
-    );
-  },
-  sum() {
-    return +this.one + +this.two;
-  },
-  mul() {
-    return +this.one * +this.two;
-  },
-};
+// let calculator = {
+//   read() {
+//     return (
+//       (this.one = prompt("vvedi pervoe chislo")),
+//       (this.two = prompt("vvedi vtoroe chislo"))
+//     );
+//   },
+//   sum() {
+//     return +this.one + +this.two;
+//   },
+//   mul() {
+//     return +this.one * +this.two;
+//   },
+// };
 
-calculator.read();
-alert(calculator.sum());
-alert(calculator.mul());
+// calculator.read();
+// alert(calculator.sum());
+// alert(calculator.mul());
+
+// let ladder = {
+//   step: 0,
+//   up() {
+//     this.step++;
+//     return this;
+//   },
+//   down() {
+//     this.step--;
+//     return this;
+//   },
+//   showStep: function () {
+//     // показывает текущую ступеньку
+//     alert(this.step);
+//     return this;
+//   },
+// };
+
+// ladder.up().up().down().showStep().down().showStep();
+
+// function Calculator() {
+//   this.read = function () {
+//     return (
+//       (this.one = prompt("vvedi pervoe chislo")),
+//       (this.two = prompt("vvedi vtoroe chislo"))
+//     );
+//   };
+//   this.sum = function () {
+//     return +this.one + +this.two;
+//   };
+//   this.mul = function () {
+//     return +this.one * +this.two;
+//   };
+// }
+
+// let calculator = new Calculator();
+
+// calculator.read();
+// alert("Sum=" + calculator.sum());
+// alert("Mul=" + calculator.mul());
+
+// function Accumulator(startingValue) {
+//   this.value = startingValue;
+//   this.read = function () {
+//     this.value += +prompt("vvedi chislo");
+//   };
+// }
+
+// let accumulator = new Accumulator(1);
+
+// accumulator.read();
+// accumulator.read();
+
+// alert(accumulator.value);
+
+function smash(words) {
+  return words.join(" ");
+}
+
+console.log(smash(["hello", "amazing", "world"]));
