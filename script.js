@@ -497,8 +497,75 @@
 
 // alert(accumulator.value);
 
-function smash(words) {
-  return words.join(" ");
-}
+// function smash(words) {
+//   return words.join(" ");
+// }
 
-console.log(smash(["hello", "amazing", "world"]));
+// console.log(smash(["hello", "amazing", "world"]));
+
+// function findNeedle(haystack) {
+//   return `found the needle at position ${haystack.indexOf("needle")}`;
+// }
+
+// console.log(
+//   findNeedle([
+//     "3",
+//     "123124234",
+//     undefined,
+//     "needle",
+//     "world",
+//     "hay",
+//     2,
+//     "3",
+//     true,
+//     false,
+//   ])
+// );
+
+// function summ() {
+//   a = prompt("1");
+//   b = prompt("1");
+//   let sum = +a + +b;
+//   alert(sum);
+// }
+
+// summ();
+// function readNumber() {
+//   let a = +prompt("vvedi chislo");
+//   if (a.isFinite) {
+//     alert(`chislo ${a}`);
+//   } else if (a == null) {
+//     alert(`chislo null`);
+//   }
+// }
+// readNumber();
+
+function sumArray(array) {
+  //   console.log(array.length);
+  if (array == null || array.length == 0 || array.length == 1) {
+    return 0;
+  } else {
+    let max = array[0];
+    let min = array[0];
+    array.forEach(function (elem, index) {
+      if (index > 0) {
+        if (max < elem) {
+          max = elem;
+        }
+      }
+    });
+    array.forEach(function (elem, index) {
+      if (index > 0) {
+        if (min > elem) {
+          min = elem;
+        }
+      }
+    });
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+      sum = sum + array[i];
+    }
+    return sum - min - max;
+  }
+}
+console.log(sumArray(null));
