@@ -540,32 +540,41 @@
 // }
 // readNumber();
 
-function sumArray(array) {
-  //   console.log(array.length);
-  if (array == null || array.length == 0 || array.length == 1) {
-    return 0;
-  } else {
-    let max = array[0];
-    let min = array[0];
-    array.forEach(function (elem, index) {
-      if (index > 0) {
-        if (max < elem) {
-          max = elem;
-        }
-      }
-    });
-    array.forEach(function (elem, index) {
-      if (index > 0) {
-        if (min > elem) {
-          min = elem;
-        }
-      }
-    });
-    let sum = 0;
-    for (let i = 0; i < array.length; i++) {
-      sum = sum + array[i];
-    }
-    return sum - min - max;
-  }
+// function sumArray(array) {
+//   //   console.log(array.length);
+//   if (array == null || array.length == 0 || array.length == 1) {
+//     return 0;
+//   } else {
+//     let max = array[0];
+//     let min = array[0];
+//     array.forEach(function (elem, index) {
+//       if (index > 0) {
+//         if (max < elem) {
+//           max = elem;
+//         }
+//       }
+//     });
+//     array.forEach(function (elem, index) {
+//       if (index > 0) {
+//         if (min > elem) {
+//           min = elem;
+//         }
+//       }
+//     });
+//     let sum = 0;
+//     for (let i = 0; i < array.length; i++) {
+//       sum = sum + array[i];
+//     }
+//     return sum - min - max;
+//   }
+// }
+// console.log(sumArray(null));
+
+function readNumber() {
+  let num;
+  do {
+    num = prompt("vvedi chislo");
+  } while (!isFinite(num));
+  return "Chislo:" + num;
 }
-console.log(sumArray(null));
+console.log(readNumber());
