@@ -570,11 +570,25 @@
 // }
 // console.log(sumArray(null));
 
-function readNumber() {
-  let num;
-  do {
-    num = prompt("vvedi chislo");
-  } while (!isFinite(num));
-  return "Chislo:" + num;
+// function readNumber() {
+//   let num;
+//   do {
+//     num = prompt("vvedi chislo");
+//   } while (!isFinite(num));
+//   return "Chislo:" + num;
+// }
+// console.log(readNumber());
+
+// function ucFirst(str) {
+//   return str[0].toUpperCase() + str.slice(1);
+// }
+
+// console.log(ucFirst("hjbjhbuhbihu"));
+
+function checkSpam(str) {
+  str = str.toLowerCase();
+  if (str.includes("viagra") || str.includes("xxx")) {
+    return true;
+  } else return false;
 }
-console.log(readNumber());
+console.log(checkSpam("hsudn c ijs s cc xxx"));
