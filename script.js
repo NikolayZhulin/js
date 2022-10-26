@@ -652,13 +652,78 @@ let arrq = [5, 3, 8, 1, 1, 2, 3, 1, 2, 9];
 
 // console.log(arr);
 
-let arr = ["HTML", "JavaScript", "CSS"];
+// let arr = ["HTML", "JavaScript", "CSS"];
+// function copySorted(arr) {
+//   return arr.slice().sort();
+//
+// let sorted = copySorted(arr);
+// alert(sorted);
+// alert(arr);
 
-function copySorted(arr) {
-  return arr.slice().sort();
+// function Calculator() {
+//   this.calculate = function (str) {
+//     let split = str.split(" ");
+//     let a = +split[0];
+//     let op = +split[1];
+//       let b = +split[2];
+
+//   };
+// }
+
+// let calc = new Calculator();
+// alert(calc.calculate("3 + 7"));
+// let a = "1+2";
+// console.log(a.split("+"));
+
+// let vasya = { name: "Вася", age: 25 };
+// let petya = { name: "Петя", age: 30 };
+// let masha = { name: "Маша", age: 28 };
+
+// let users = [vasya, petya, masha];
+
+// let names = users.map((item) => item.name);
+
+// alert(names);
+
+// let vasya = { name: "Вася", surname: "Пупкин", id: 1 };
+// let petya = { name: "Петя", surname: "Иванов", id: 2 };
+// let masha = { name: "Маша", surname: "Петрова", id: 3 };
+
+// let users = [vasya, petya, masha];
+
+// let usersMapped = users.map((item) => ({
+//   fullname: `${item.name} ${item.surname}`,
+//   id: item.id,
+// }));
+
+// alert(usersMapped[0].id); // 1
+// alert(usersMapped[0].fullname);
+
+// let vasya = { name: "Вася", age: 25 };
+// let petya = { name: "Петя", age: 30 };
+// let masha = { name: "Маша", age: 28 };
+
+// let arr = [vasya, petya, masha];
+
+// function sortByAge(arr) {
+//   arr.sort((a, b) => a.age - b.age);
+// }
+
+// sortByAge(arr);
+
+// // теперь: [vasya, masha, petya]
+// alert(arr[0].name); // Вася
+// alert(arr[1].name); // Маша
+// alert(arr[2].name); // Петя
+
+let vasya = { name: "Вася", age: 25 };
+let petya = { name: "Петя", age: 30 };
+let masha = { name: "Маша", age: 29 };
+
+let arr = [vasya, petya, masha];
+
+function getAverageAge(arr) {
+  return arr.reduce((sum, item) => sum + item.age, 0) / arr.length;
 }
 
-let sorted = copySorted(arr);
-
-alert(sorted);
-alert(arr);
+alert(getAverageAge(arr));
