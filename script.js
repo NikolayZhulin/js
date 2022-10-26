@@ -614,13 +614,51 @@
 // styles.unshift("rap", "raggy");
 // console.log(styles);
 
-function camelize(str) {
-  let arr = str.split("-");
-  console.log(arr);
-  let newArr = arr.map((item, index) =>
-    index != 0 ? item.charAt(0).toUpperCase() + item.slice(1) : item
-  );
-  return newArr.join("");
+// function camelize(str) {
+//   let arr = str.split("-");
+//   console.log(arr);
+//   let newArr = arr.map((item, index) =>
+//     index != 0 ? item.charAt(0).toUpperCase() + item.slice(1) : item
+//   );
+//   return newArr.join("");
+// }
+
+// console.log(camelize("-ollist-style-image-ul-yi"));
+
+let arrq = [5, 3, 8, 1, 1, 2, 3, 1, 2, 9];
+
+// function filterRange(arr, a, b) {
+//   let filterArr = arr.filter((item) => item >= a && item <= b);
+//   return filterArr;
+// }
+
+// console.log(filterRange(arr, 1, 4));
+
+// function filterRangeInPlace(arr, a, b) {
+//   for (let i = 0; i <= arr.length - 1; i++) {
+//     if (arr[i] < a || arr[i] > b) {
+//       arr.splice(i, 1);
+//     }
+//   }
+//   return arr;
+// }
+// console.log(arrq.length);
+// console.log(filterRangeInPlace(arrq, 1, 4));
+// console.log(arrq.length);
+
+// let arr = [5, 2, 1, -10, 8];
+
+// arr.sort((a, b) => b - a);
+
+// console.log(arr);
+
+let arr = ["HTML", "JavaScript", "CSS"];
+
+function copySorted(arr) {
+  return arr.slice().sort();
 }
 
-console.log(camelize("-ollist-style-image-ul-yi"));
+let sorted = copySorted(arr);
+
+alert(sorted);
+alert(arr);
