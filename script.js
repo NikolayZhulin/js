@@ -716,14 +716,55 @@ let arrq = [5, 3, 8, 1, 1, 2, 3, 1, 2, 9];
 // alert(arr[1].name); // Маша
 // alert(arr[2].name); // Петя
 
-let vasya = { name: "Вася", age: 25 };
-let petya = { name: "Петя", age: 30 };
-let masha = { name: "Маша", age: 29 };
+// let vasya = { name: "Вася", age: 25 };
+// let petya = { name: "Петя", age: 30 };
+// let masha = { name: "Маша", age: 29 };
 
-let arr = [vasya, petya, masha];
+// let arr = [vasya, petya, masha];
 
-function getAverageAge(arr) {
-  return arr.reduce((sum, item) => sum + item.age, 0) / arr.length;
+// function getAverageAge(arr) {
+//   return arr.reduce((sum, item) => sum + item.age, 0) / arr.length;
+// }
+
+// alert(getAverageAge(arr));
+
+// function unique(arr) {
+//   let res = [];
+//   for (let i = 0; i <= arr.length; i++) {
+//     if (!res.includes(arr[i])) {
+//       res.push(arr[i]);
+//     }
+//   }
+//   return res;
+// }
+
+// let strings = [
+//   "кришна",
+//   "кришна",
+//   "харе",
+//   "харе",
+//   "харе",
+//   "харе",
+//   "кришна",
+//   "кришна",
+//   ":-O",
+// ];
+
+// alert(unique(strings));
+
+let users = [
+  { id: "john", name: "John Smith", age: 20 },
+  { id: "ann", name: "Ann Smith", age: 24 },
+  { id: "pete", name: "Pete Peterson", age: 31 },
+];
+
+function groupById(arr) {
+  return arr.reduce((obj, value) => {
+    obj[value.id] = value;
+    return obj;
+  }, {});
 }
 
-alert(getAverageAge(arr));
+let usersById = groupById(users);
+
+console.log(usersById);
