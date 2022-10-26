@@ -585,10 +585,42 @@
 
 // console.log(ucFirst("hjbjhbuhbihu"));
 
-function checkSpam(str) {
-  str = str.toLowerCase();
-  if (str.includes("viagra") || str.includes("xxx")) {
-    return true;
-  } else return false;
+// function checkSpam(str) {
+//   str = str.toLowerCase();
+//   if (str.includes("viagra") || str.includes("xxx")) {
+//     return true;
+//   } else return false;
+// }
+// console.log(checkSpam("hsudn c ijs s cc xxx"));
+
+// function truncate(str, maxlength) {
+//   if (str.length >= maxlength) {
+//     return str.slice(0, maxlength - 1) + "...";
+//   }
+// }
+
+// console.log(truncate("Вот, что мне хотелось бы сказать на эту тему:", 20));
+
+// function extractCurrencyValue(str) {
+//   return +str.slice(1);
+// }
+
+// console.log(extractCurrencyValue("$120") === 120);
+
+// let styles = ["Джаз", "Блюз"];
+// console.log(styles.push("Рок-н-ролл"));
+// console.log(styles.splice(1, Math.floor((styles.length - 1) / 2), "classic"));
+// console.log(styles.shift());
+// styles.unshift("rap", "raggy");
+// console.log(styles);
+
+function camelize(str) {
+  let arr = str.split("-");
+  console.log(arr);
+  let newArr = arr.map((item, index) =>
+    index != 0 ? item.charAt(0).toUpperCase() + item.slice(1) : item
+  );
+  return newArr.join("");
 }
-console.log(checkSpam("hsudn c ijs s cc xxx"));
+
+console.log(camelize("-ollist-style-image-ul-yi"));
