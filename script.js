@@ -752,19 +752,112 @@ let arrq = [5, 3, 8, 1, 1, 2, 3, 1, 2, 9];
 
 // alert(unique(strings));
 
-let users = [
-  { id: "john", name: "John Smith", age: 20 },
-  { id: "ann", name: "Ann Smith", age: 24 },
-  { id: "pete", name: "Pete Peterson", age: 31 },
-];
+// let users = [
+//   { id: "john", name: "John Smith", age: 20 },
+//   { id: "ann", name: "Ann Smith", age: 24 },
+//   { id: "pete", name: "Pete Peterson", age: 31 },
+// ];
 
-function groupById(arr) {
-  return arr.reduce((obj, value) => {
-    obj[value.id] = value;
-    return obj;
-  }, {});
+// function groupById(arr) {
+//   return arr.reduce((obj, value) => {
+//     obj[value.id] = value;
+//     return obj;
+//   }, {});
+// }
+
+// let usersById = groupById(users);
+
+// console.log(usersById);
+
+// function createUser(uName, uAge) {
+//   return {
+//     name: uName,
+//     age: uAge,
+//     displayInfo() {
+//       console.log(this.name + " " + this.age);
+//     },
+//     displayCarInfo(car) {
+//       console.log(this.name + " " + car.name + " " + car.cyear);
+//     },
+//   };
+// }
+
+// function createCar(car, year) {
+//   return {
+//     name: car,
+//     cyear: year,
+//   };
+// }
+
+// let renault = createCar("logan", 2020);
+
+// let tom = createUser("Tom", 25);
+// tom.displayInfo();
+// console.log(tom.name);
+
+// tom.displayCarInfo(renault);
+
+// function User(uName, age) {
+//   this.name = uName;
+//   let _age = age;
+//   this.displayInfo = function () {
+//     console.log(this.name + " " + this.age);
+//   };
+//   this.getAge = function () {
+//     return _age;
+//   };
+//   this.setAge = function (age) {
+//     _age = age;
+//   };
+// }
+
+// let tom = new User("Tom", 25);
+// console.log(tom._age);
+// console.log(tom.getAge());
+// console.log(tom.setAge(12));
+// console.log(tom.getAge());
+
+// let vasya = { name: "Вася", surname: "Пупкин", id: 1 };
+// let petya = { name: "Петя", surname: "Иванов", id: 2 };
+// let masha = { name: "Маша", surname: "Петрова", id: 3 };
+
+// let users = [vasya, petya, masha];
+
+// let usersMapped = users.map((item) => ({
+//   fullName: item.name + " " + item.surname,
+//   id: item.id,
+// }));
+
+// console.log(usersMapped);
+
+// function unique(arr) {
+//   let set = new Set(arr);
+//   return Array.from(set);
+// }
+
+// let values = [
+//   "Hare",
+//   "Krishna",
+//   "Hare",
+//   "Krishna",
+//   "Krishna",
+//   "Krishna",
+//   "Hare",
+//   "Hare",
+//   ":-O",
+//   4,
+// ];
+
+// console.log(unique(values));
+
+let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+function aclean(arr) {
+  let map = new Map();
+  for (let item of arr) {
+    let newArr = item.toLowerCase().split("").sort().join("");
+    map.set(newArr, item);
+  }
+  return Array.from(map.values());
 }
-
-let usersById = groupById(users);
-
-console.log(usersById);
+console.log(aclean(arr));
