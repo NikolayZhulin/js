@@ -863,9 +863,90 @@ let arrq = [5, 3, 8, 1, 1, 2, 3, 1, 2, 9];
 // console.log(aclean(arr));
 
 
-function descendingOrder(n){
-  if(isFinite(n)&& n>=0){
-	  return n.toString().split('').sort((a,b)=>b-a).join('');
-  }
+// function descendingOrder(n){
+//   if(isFinite(n)&& n>=0){
+// 	  return n.toString().split('').sort((a,b)=>b-a).join('');
+//   }
+// }
+// console.log(descendingOrder(3401345));
+
+const div = document.createElement('div');
+console.log(div);
+div.classList.add('wrapper');
+let body = document.querySelector('body');
+body.appendChild(div);
+
+const header = document.createElement('h1');
+header.textContent = 'DOM (Document Object Model)';
+
+div.insertAdjacentElement("beforebegin", header);
+
+let ul = `<ul>
+<li>один</li>
+<li>два</li>
+<li>три</li>
+</ul>`
+
+div.innerHTML = ul;
+
+let img = document.createElement('img');
+img.src = 'https://picsum.photos/240';
+console.log(img);
+img.width = 240;
+img.classList.add('super');
+img.alt = 'superman';
+div.appendChild(img);
+
+const elemHTML = `<div class="pDiv">
+<p>Параграф1</p>
+<p>Параграф2</p>
+</div>`
+
+
+const ulList = div.querySelector('ul')
+ulList.insertAdjacentHTML('beforebegin', elemHTML);
+const secondP = document.querySelector('.pDiv').children[1];
+console.log(secondP);
+secondP.classList.add('text');
+const firstP = document.querySelector('.pDiv').firstElementChild;
+firstP.remove();
+
+const generationAutoCard = (brand, color, year) => {
+	return `
+		<div class="autoCard">
+			<h2>${brand}</h2>
+			<p>Автомобиль ${brand} -${year} года. Возраст авто - ${new Date().getFullYear()- year} лет.</p>
+			<p>Цвет: ${color}</p>
+			<button type="button" class="btn">Удалить</button>
+		</div>`
 }
-console.log(descendingOrder(3401345));
+
+let autosDiv = document.createElement('div');
+autosDiv.classList.add('autos');
+console.log(autosDiv);
+
+const carsList =  [
+	{brand:'Tesla', year: 2015, color:'red'},
+	{brand:'Lexus', year: 2016, color:'silver'},
+	{brand:'Nissan', year: 2012, color:'black'},
+]
+
+let carsHTML = carsList.map(car => {
+	return generationAutoCard(car.brand, car.color, car.year)
+}).join('')
+
+console.log(carsHTML);
+
+autosDiv.innerHTML = carsHTML;
+div.insertAdjacentElement("beforebegin", autosDiv);
+
+const buttons = document.querySelectorAll('.btn');
+console.log(buttons);
+
+function handleClick(event){
+const currentButton = event.currentTarget;
+currentButton.closest('.autoCard').remove();
+
+}
+
+buttons.forEach((b)=>b.addEventListener('click',handleClick))
