@@ -850,14 +850,22 @@ let arrq = [5, 3, 8, 1, 1, 2, 3, 1, 2, 9];
 
 // console.log(unique(values));
 
-let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+// let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
 
-function aclean(arr) {
-  let map = new Map();
-  for (let item of arr) {
-    let newArr = item.toLowerCase().split("").sort().join("");
-    map.set(newArr, item);
+// function aclean(arr) {
+//   let map = new Map();
+//   for (let item of arr) {
+//     let newArr = item.toLowerCase().split("").sort().join("");
+//     map.set(newArr, item);
+//   }
+//   return Array.from(map.values());
+// }
+// console.log(aclean(arr));
+
+
+function descendingOrder(n){
+  if(isFinite(n)&& n>=0){
+	  return n.toString().split('').sort((a,b)=>b-a).join('');
   }
-  return Array.from(map.values());
 }
-console.log(aclean(arr));
+console.log(descendingOrder(3401345));
