@@ -1,0 +1,12 @@
+/*let list = document.querySelectorAll('ul>li');*/
+/*for(let li of list){*/
+/*	let childLi = li.querySelectorAll('ul>li');*/
+/*	let everyLi = document.querySelectorAll('li');*/
+/*for(let i = 0;i<list.length;i++) {*/
+/*	let childLi = list[i].querySelectorAll('ul>li');*/
+/*	let everyLi = document.querySelectorAll('li');*/
+/*if(childLi.length){*/
+/*	everyLi[i].firstChild.data += `[${childLi.length}]`;*/
+/*}*/
+/*}*/
+/*}*/

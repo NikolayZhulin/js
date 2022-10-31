@@ -951,37 +951,47 @@ let arrq = [5, 3, 8, 1, 1, 2, 3, 1, 2, 9];
 //
 // buttons.forEach((b)=>b.addEventListener('click',handleClick))
 
-let div = document.createElement('div');
-div.classList.add('wrapper');
-console.log(div);
-let body = document.querySelector('body');
-body.appendChild(div);
+// let div = document.createElement('div');
+// div.classList.add('wrapper');
+// console.log(div);
+// let body = document.querySelector('body');
+// body.appendChild(div);
+//
+// const carsList =  [
+// 	{brand:'Tesla', year: 2015, color:'red'},
+// 	{brand:'Lexus', year: 2016, color:'silver'},
+// 	{brand:'Nissan', year: 2012, color:'black'},
+// ]
+//
+// function getCarsInfo(brand, year,color){
+// 	return `<div class="autoCard">
+// 					<h2>${brand}</h2>
+// 					<p>Автомобиль ${brand} -${year} года. Возраст авто - ${new Date().getFullYear()- year} лет.</p>
+// 					<p>Цвет: ${color}</p>
+// 					<button type="button" class="btn">Удалить</button>
+// 		 		</div>`
+// }
+//
+// let carsHTML = carsList.map(car => getCarsInfo(car.brand, car.year, car.color)).join('');
+// console.log(carsHTML);
+//
+// div.insertAdjacentHTML('beforebegin',carsHTML);
+//
+// const buttons = document.querySelectorAll('.btn');
+//
+// function removeCard(e){
+// 	let currentBtn = e.currentTarget;
+// 	currentBtn.closest('.autoCard').remove()
+// }
+//
+// buttons.forEach(b=> b.addEventListener('click',removeCard))
 
-const carsList =  [
-	{brand:'Tesla', year: 2015, color:'red'},
-	{brand:'Lexus', year: 2016, color:'silver'},
-	{brand:'Nissan', year: 2012, color:'black'},
-]
-
-function getCarsInfo(brand, year,color){
-	return `<div class="autoCard">
-					<h2>${brand}</h2>
-					<p>Автомобиль ${brand} -${year} года. Возраст авто - ${new Date().getFullYear()- year} лет.</p>
-					<p>Цвет: ${color}</p>
-					<button type="button" class="btn">Удалить</button>
-		 		</div>`
+let list = document.querySelectorAll('li');
+for(let i = 0;i<list.length;i++){
+		let childLi = list[i].querySelectorAll('li').length;
+		console.log(childLi);
+		if(childLi){
+			list[i].firstChild.data += `[${childLi}]`;
+		}
 }
 
-let carsHTML = carsList.map(car => getCarsInfo(car.brand, car.year, car.color)).join('');
-console.log(carsHTML);
-
-div.insertAdjacentHTML('beforebegin',carsHTML);
-
-const buttons = document.querySelectorAll('.btn');
-
-function removeCard(e){
-	let currentBtn = e.currentTarget;
-	currentBtn.closest('.autoCard').remove()
-}
-
-buttons.forEach(b=> b.addEventListener('click',removeCard))
