@@ -986,12 +986,67 @@ let arrq = [5, 3, 8, 1, 1, 2, 3, 1, 2, 9];
 //
 // buttons.forEach(b=> b.addEventListener('click',removeCard))
 
-let list = document.querySelectorAll('li');
-for(let i = 0;i<list.length;i++){
-		let childLi = list[i].querySelectorAll('li').length;
-		console.log(childLi);
-		if(childLi){
-			list[i].firstChild.data += `[${childLi}]`;
+// let list = document.querySelectorAll('li');
+// for(let i = 0;i<list.length;i++){
+// 		let childLi = list[i].querySelectorAll('li').length;
+// 		if(childLi){
+// 			list[i].firstChild.data += `[${childLi}]`;
+// 		}
+// }
+
+
+
+function createCalendar() {
+	let calendar = document.querySelector('#calendar');
+	console.log(calendar)
+	let days = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+	let counter = 1;
+	let createTable = document.createElement('table');
+	calendar.append(createTable);
+	for (let day of days) {
+		let createTh = document.createElement('th');
+		createTh.innerHTML = day;
+		createTable.append(createTh);
+	}
+	for(let i=0;i<=4;i++){
+		let createTr = document.createElement('tr');
+		table.append(createTr);
+		let rows = table.rows;
+		for(let j=0;j<7;j++){
+			let createTd = document.createElement('td');
+			createTd.innerHTML = counter;
+			counter++;
+			if(counter<=32){
+				rows[i].append(createTd);
+			}else{
+				createTd.innerHTML = ' ';
+				rows[i].append(createTd);
+			}
+			
 		}
+	}
+	
+	// let createTable = document.createElement('table');
+	// createTable.classList.add('bigTable')
+	//
+	// calendar.append(createTable);
+	// let table = document.querySelector('.bigTable')
+	//
+	// for (let i = 0; i < 6; i++) {
+	// 	let createdRow = document.createElement('tr');
+	// 	table.append(createdRow);
+	// }
+	// let rows = table.rows;
+	// for (let i = 0; i < rows.length; i++) {
+	// 	let cells = rows[i].cells;
+	// 	for (let j = 0; j < 7; j++) {
+	// 		let td = document.createElement('td');
+	// 		rows[i].append(td);
+	// 		for (let k of arr) {
+	// 			cells[j].innerHTML = k;
+	// 		}
+	// 	}
+	// }
 }
 
+createCalendar();

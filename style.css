@@ -1,12 +1,15 @@
-/*let list = document.querySelectorAll('ul>li');*/
-/*for(let li of list){*/
-/*	let childLi = li.querySelectorAll('ul>li');*/
-/*	let everyLi = document.querySelectorAll('li');*/
-/*for(let i = 0;i<list.length;i++) {*/
-/*	let childLi = list[i].querySelectorAll('ul>li');*/
-/*	let everyLi = document.querySelectorAll('li');*/
-/*if(childLi.length){*/
-/*	everyLi[i].firstChild.data += `[${childLi.length}]`;*/
-/*}*/
-/*}*/
-/*}*/
+table {
+	border-collapse: collapse;
+}
+
+td,
+th {
+	border: 1px solid black;
+	padding: 3px;
+	text-align: center;
+}
+
+th {
+	font-weight: bold;
+	background-color: #E6E6E6;
+}
