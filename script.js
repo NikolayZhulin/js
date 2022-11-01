@@ -996,57 +996,79 @@ let arrq = [5, 3, 8, 1, 1, 2, 3, 1, 2, 9];
 
 
 
-function createCalendar() {
-	let calendar = document.querySelector('#calendar');
-	console.log(calendar)
-	let days = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
-	let counter = 1;
-	let createTable = document.createElement('table');
-	calendar.append(createTable);
-	for (let day of days) {
-		let createTh = document.createElement('th');
-		createTh.innerHTML = day;
-		createTable.append(createTh);
-	}
-	for(let i=0;i<=4;i++){
-		let createTr = document.createElement('tr');
-		table.append(createTr);
-		let rows = table.rows;
-		for(let j=0;j<7;j++){
-			let createTd = document.createElement('td');
-			createTd.innerHTML = counter;
-			counter++;
-			if(counter<=32){
-				rows[i].append(createTd);
-			}else{
-				createTd.innerHTML = ' ';
-				rows[i].append(createTd);
-			}
-			
-		}
-	}
-	
-	// let createTable = document.createElement('table');
-	// createTable.classList.add('bigTable')
-	//
-	// calendar.append(createTable);
-	// let table = document.querySelector('.bigTable')
-	//
-	// for (let i = 0; i < 6; i++) {
-	// 	let createdRow = document.createElement('tr');
-	// 	table.append(createdRow);
-	// }
-	// let rows = table.rows;
-	// for (let i = 0; i < rows.length; i++) {
-	// 	let cells = rows[i].cells;
-	// 	for (let j = 0; j < 7; j++) {
-	// 		let td = document.createElement('td');
-	// 		rows[i].append(td);
-	// 		for (let k of arr) {
-	// 			cells[j].innerHTML = k;
-	// 		}
-	// 	}
-	// }
-}
+// function createCalendar() {
+// 	let calendar = document.querySelector('#calendar');
+// 	console.log(calendar)
+// 	let days = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+// 	let counter = 1;
+// 	let createTable = document.createElement('table');
+// 	createTable.classList.add('bigTable')
+// 	calendar.append(createTable);
+// 	let table = document.querySelector('.bigTable')
+// 	for (let day of days) {
+// 		let createTh = document.createElement('th');
+// 		createTh.innerHTML = day;
+// 		table.append(createTh);
+// 	}
+// 	for(let i=0;i<=4;i++){
+// 		let createTr = document.createElement('tr');
+// 		table.append(createTr);
+// 		let rows = table.rows;
+// 		for(let j=0;j<7;j++){
+// 			let createTd = document.createElement('td');
+// 			createTd.innerHTML = counter;
+// 			counter++;
+// 			if(counter<=32){
+// 				rows[i].append(createTd);
+// 			}else{
+// 				createTd.innerHTML = ' ';
+// 				rows[i].append(createTd);
+// 			}
+// 		}
+// 	}
+// }
+//
+// createCalendar();
 
-createCalendar();
+
+
+
+let body = document.querySelector('body');
+let clock = document.createElement('div');
+body.prepend(clock);
+let hours = document.createElement('span');
+hours.classList.add('red')
+hours.textContent = 'hh:';
+clock.append(hours);
+let min = document.createElement('span');
+min.textContent = 'mm:';
+min.classList.add('green')
+clock.append(min);
+let sec = document.createElement('span');
+sec.textContent = 'ss';
+sec.classList.add('blue');
+clock.append(sec);
+
+
+let timer;
+function clockStart(){
+	timer = setInterval(returnDate,1000)
+	returnDate();
+}
+	function returnDate(){
+		 let h, m, s;
+		let date = new Date();
+		s = date.getSeconds();
+		if(s<10){s = '0'+s}
+		h = date.getHours();
+		if(h<10){h = '0'+h}
+		m = date.getMinutes();
+		if(m<10){m = '0'+m}
+		sec.innerHTML = s;
+		min.innerHTML = m + ':';
+		hours.innerHTML = h + ':';
+	};
+
+function clockStop(){
+	clearInterval(timer);
+};
