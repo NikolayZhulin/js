@@ -625,7 +625,7 @@
 
 // console.log(camelize("-ollist-style-image-ul-yi"));
 
-let arrq = [5, 3, 8, 1, 1, 2, 3, 1, 2, 9];
+// let arrq = [5, 3, 8, 1, 1, 2, 3, 1, 2, 9];
 
 // function filterRange(arr, a, b) {
 //   let filterArr = arr.filter((item) => item >= a && item <= b);
@@ -995,7 +995,6 @@ let arrq = [5, 3, 8, 1, 1, 2, 3, 1, 2, 9];
 // }
 
 
-
 // function createCalendar() {
 // 	let calendar = document.querySelector('#calendar');
 // 	console.log(calendar)
@@ -1031,44 +1030,89 @@ let arrq = [5, 3, 8, 1, 1, 2, 3, 1, 2, 9];
 // createCalendar();
 
 
+// let body = document.querySelector('body');
+// let clock = document.createElement('div');
+// body.prepend(clock);
+// let hours = document.createElement('span');
+// hours.classList.add('red')
+// hours.textContent = 'hh:';
+// clock.append(hours);
+// let min = document.createElement('span');
+// min.textContent = 'mm:';
+// min.classList.add('green')
+// clock.append(min);
+// let sec = document.createElement('span');
+// sec.textContent = 'ss';
+// sec.classList.add('blue');
+// clock.append(sec);
+//
+//
+// let timer;
+// function clockStart(){
+// 	timer = setInterval(returnDate,1000)
+// 	returnDate();
+// }
+// 	function returnDate(){
+// 		 let h, m, s;
+// 		let date = new Date();
+// 		s = date.getSeconds();
+// 		if(s<10){s = '0'+s}
+// 		h = date.getHours();
+// 		if(h<10){h = '0'+h}
+// 		m = date.getMinutes();
+// 		if(m<10){m = '0'+m}
+// 		sec.innerHTML = s;
+// 		min.innerHTML = m + ':';
+// 		hours.innerHTML = h + ':';
+// 	};
+//
+// function clockStop(){
+// 	clearInterval(timer);
+// };
 
+// let table = document.querySelector('tbody');
+// let rows = document.querySelectorAll('tbody>tr');
+// let arr = Array.from(rows);
+// let sort = arr.sort((a,b)=> a.innerHTML < b.innerHTML ? 1:-1);
+// for(let i=0;i<sort.length; i++){
+// 	rows[i].remove()
+// }
+// for(let i=0;i<sort.length; i++){
+// 	table.insertAdjacentElement('afterbegin', sort[i]);
+// }
 
-let body = document.querySelector('body');
-let clock = document.createElement('div');
-body.prepend(clock);
-let hours = document.createElement('span');
-hours.classList.add('red')
-hours.textContent = 'hh:';
-clock.append(hours);
-let min = document.createElement('span');
-min.textContent = 'mm:';
-min.classList.add('green')
-clock.append(min);
-let sec = document.createElement('span');
-sec.textContent = 'ss';
-sec.classList.add('blue');
-clock.append(sec);
-
-
-let timer;
-function clockStart(){
-	timer = setInterval(returnDate,1000)
-	returnDate();
+let table = document.querySelectorAll('tr');
+for (let i = 2; i < table.length; i++) {
+	table = document.querySelectorAll('tr');
+	for (let j = 1; i - j > 0; j++) {
+		if (table[i].firstElementChild.textContent < table[i-j].firstElementChild.textContent) {
+			table[i - j].before(table[i])
+		}
+	}
 }
-	function returnDate(){
-		 let h, m, s;
-		let date = new Date();
-		s = date.getSeconds();
-		if(s<10){s = '0'+s}
-		h = date.getHours();
-		if(h<10){h = '0'+h}
-		m = date.getMinutes();
-		if(m<10){m = '0'+m}
-		sec.innerHTML = s;
-		min.innerHTML = m + ':';
-		hours.innerHTML = h + ':';
-	};
 
-function clockStop(){
-	clearInterval(timer);
-};
+// let shouldSwitch;
+// let switching=true;
+// let i;
+// while(switching){
+// 	switching = false;
+// 	let rows = document.querySelectorAll('tr');
+// 	console.log(rows)
+// 	for (i = 1; i < (rows.length-1); i++) {
+// 		shouldSwitch = true;
+// 		console.log(rows.length);
+// 		let x = rows[i].querySelectorAll("td")[0];
+// 		console.log(x);
+// 		let y = rows[i + 1].querySelectorAll("td")[0];
+// 		console.log(y);
+// 		if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+// 			shouldSwitch = true;
+// 			break;
+// 		}
+// 	}
+// 		if (shouldSwitch) {
+// 			rows[i].parentElement.insertBefore(rows[i + 1], rows[i]);
+// 			switching = true;
+// 		}
+// }
+
