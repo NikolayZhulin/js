@@ -1,25 +1,19 @@
-table {
-	border-collapse: collapse;
-}
-
-td,
-th {
+.notification {
+	position: fixed;
+	z-index: 1000;
+	padding: 5px;
 	border: 1px solid black;
-	padding: 3px;
+	font-size: 20px;
+	background: white;
 	text-align: center;
 }
 
-th {
-	font-weight: bold;
-	background-color: #E6E6E6;
+.welcome {
+	background: #b80000;
+	color: yellow;
 }
 
-.blue{
-	color:blue;
+.visible{
+	display: none;
 }
-.red{
-	color:red;
-}
-.green{
-	color:green;
-}
+

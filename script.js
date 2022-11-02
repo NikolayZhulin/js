@@ -1081,15 +1081,15 @@
 // 	table.insertAdjacentElement('afterbegin', sort[i]);
 // }
 
-let table = document.querySelectorAll('tr');
-for (let i = 2; i < table.length; i++) {
-	table = document.querySelectorAll('tr');
-	for (let j = 1; i - j > 0; j++) {
-		if (table[i].firstElementChild.textContent < table[i-j].firstElementChild.textContent) {
-			table[i - j].before(table[i])
-		}
-	}
-}
+// let table = document.querySelectorAll('tr');
+// for (let i = 2; i < table.length; i++) {
+// 	table = document.querySelectorAll('tr');
+// 	for (let j = 1; i - j > 0; j++) {
+// 		if (table[i].firstElementChild.textContent < table[i-j].firstElementChild.textContent) {
+// 			table[i - j].before(table[i])
+// 		}
+// 	}
+// }
 
 // let shouldSwitch;
 // let switching=true;
@@ -1115,4 +1115,65 @@ for (let i = 2; i < table.length; i++) {
 // 			switching = true;
 // 		}
 // }
+
+// function showNotification(options){
+// 	let body = document.querySelector('body');
+// 	let div = document.createElement('div');
+// 	div.classList.add('notification');
+// 	div.classList.add(options.className);
+// 	div.innerHTML = options.html;
+// 	body.append(div);
+// 	div.style.position = 'absolute';
+// 	div.style.top = options.top + 'px';
+// 	div.style.right = options.right + 'px';
+// 	setInterval(()=>div.classList.toggle("visible"),1000)
+// }
+//
+// showNotification({
+// 	top: 10, // 10px от верхней границы окна (по умолчанию 0px)
+// 	right: 10, // 10px от правого края окна (по умолчанию 0px)
+// 	html: "Hello!", // HTML-уведомление
+// 	className: "welcome" // дополнительный класс для div (необязательно)
+// });
+
+// function showNotification(options) {
+// 	let body = document.querySelector('body');
+// 	let div = document.createElement('div');
+// 	div.classList.add('notification');
+// 	div.classList.add(options.className);
+// 	div.innerHTML = options.html;
+// 	body.append(div);
+// 	div.style.position = 'absolute';
+// 	div.style.top = options.top + 'px';
+// 	div.style.right = options.right + 'px';
+// 	setTimeout(() => div.remove(), 2000)
+// }
+// let i =1;
+// setInterval(() => {
+// 	showNotification({
+// 		top: 10,
+// 		right: 10,
+// 		html: "Hello!" + i++,
+// 		className: "welcome"
+// 	});
+// }, 4000)
+
+function printerError(s) {
+	let inputArr = s.split('')
+	let errColors = ['n','o','p','q','r','s','t','u','v','w','x','y','z'];
+	let errorArr = [];
+	for(let i = 0;i<errColors.length-1;i++){
+		for (let j=0;j<=inputArr.length;j++){
+			if (errColors[i].includes(inputArr[j])){
+				errorArr.push(inputArr[j]);
+			}
+		}
+	}
+return `${errorArr.length}/${inputArr.length}`
+}
+
+
+s="aaabbbbhaijjjmw"
+console.log(printerError(s));
+
 
