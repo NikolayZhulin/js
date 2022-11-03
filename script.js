@@ -1158,22 +1158,35 @@
 // 	});
 // }, 4000)
 
-function printerError(s) {
-	let inputArr = s.split('')
-	let errColors = ['n','o','p','q','r','s','t','u','v','w','x','y','z'];
-	let errorArr = [];
-	for(let i = 0;i<errColors.length-1;i++){
-		for (let j=0;j<=inputArr.length;j++){
-			if (errColors[i].includes(inputArr[j])){
-				errorArr.push(inputArr[j]);
-			}
-		}
-	}
-return `${errorArr.length}/${inputArr.length}`
-}
+// function printerError(s) {
+// 	let inputArr = s.split('')
+// 	let errColors = ['n','o','p','q','r','s','t','u','v','w','x','y','z'];
+// 	let errorArr = [];
+// 	for(let i = 0;i<errColors.length-1;i++){
+// 		for (let j=0;j<=inputArr.length;j++){
+// 			if (errColors[i].includes(inputArr[j])){
+// 				errorArr.push(inputArr[j]);
+// 			}
+// 		}
+// 	}
+// return `${errorArr.length}/${inputArr.length}`
+// }
+//
+//
+// s="aaabbbbhaijjjmw"
+// console.log(printerError(s));
 
 
-s="aaabbbbhaijjjmw"
-console.log(printerError(s));
+// const ball = document.querySelector('#ball');
+// const field = document.querySelector('#field');
+//
+// let left = field.clientWidth/2 -ball.offsetWidth/2;
+// ball.style.left =left + 'px';
+// let tOp = field.clientHeight/2 -ball.offsetHeight/2;
+// ball.style.top =tOp + 'px';
 
 
+let btn = document.querySelector('#hider');
+let text = document.querySelector('#text');
+
+btn.addEventListener('click',()=> text.style.display = 'none');
