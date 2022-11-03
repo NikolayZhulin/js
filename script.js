@@ -1179,14 +1179,16 @@
 
 // const ball = document.querySelector('#ball');
 // const field = document.querySelector('#field');
-//
 // let left = field.clientWidth/2 -ball.offsetWidth/2;
 // ball.style.left =left + 'px';
 // let tOp = field.clientHeight/2 -ball.offsetHeight/2;
 // ball.style.top =tOp + 'px';
 
 
-let btn = document.querySelector('#hider');
-let text = document.querySelector('#text');
+// let btn = document.querySelector('#hider');
+// let text = document.querySelector('#text');
+//
+// btn.addEventListener('click',()=> text.style.display = 'none');
 
-btn.addEventListener('click',()=> text.style.display = 'none');
+let btn = document.querySelector('#hider');
+btn.addEventListener('click', ()=> btn.hidden = true);
