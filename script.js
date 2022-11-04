@@ -1239,30 +1239,46 @@
 // }
 
 
-let imgContainer = document.querySelector('.img-line');
-let leftBtn = document.querySelector('.left');
-let rightBtn = document.querySelector('.right');
-let move = 0;
+// let imgContainer = document.querySelector('.img-line');
+// let leftBtn = document.querySelector('.left');
+// let rightBtn = document.querySelector('.right');
+// let move = 0;
+//
+// rightBtn.addEventListener('click', () => {
+// 	if(move ==0 || move>-780){
+// 		move -= 390;
+// 	}else if(move==-780){
+// 		move -= 130;
+// 	}else if(move<=-910){
+// 		move -= 0;
+// 	}
+// 	imgContainer.style.left = move +'px';
+// })
+//
+// leftBtn.addEventListener('click', () => {
+// 	if(move ==0){
+// 		move += 0;
+// 	}else if(move==-130) {
+// 		move += 130;
+// 	}else{
+// 		move += 390;
+// 	}
+// 	imgContainer.style.left = move +'px';
+// })
+//
 
-rightBtn.addEventListener('click', () => {
-	if(move ==0 || move>-780){
-		move -= 390;
-	}else if(move==-780){
-		move -= 130;
-	}else if(move<=-910){
-		move -= 0;
+
+let arr = [20,4,-3,0,1,4,5,67,8];
+let temp;
+
+for(let i= 0;i<arr.length;i++){
+	for(let j= arr.length-1;j>=i;j--){
+		if(arr[j]<arr[i]){
+		temp = arr[j];
+		arr[j] = arr[i];
+		arr[i]=temp;
+		}
 	}
-	imgContainer.style.left = move +'px';
-})
+}
 
-leftBtn.addEventListener('click', () => {
-	if(move ==0){
-		move += 0;
-	}else if(move==-130) {
-		move += 130;
-	}else{
-		move += 390;
-	}
-	imgContainer.style.left = move +'px';
-})
-
+console.log(arr);
