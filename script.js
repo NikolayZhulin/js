@@ -1190,5 +1190,29 @@
 //
 // btn.addEventListener('click',()=> text.style.display = 'none');
 
-let btn = document.querySelector('#hider');
-btn.addEventListener('click', ()=> btn.hidden = true);
+// let btn = document.querySelector('#hider');
+// btn.addEventListener('click', ()=> btn.hidden = true);
+
+let field = document.querySelector('#field');
+let ball = document.querySelector('#ball');
+
+field.addEventListener('click', (event)=>{
+	if(event.clientX > field.clientWidth-ball.clientWidth/2){
+		let maxX = field.clientWidth - ball.clientWidth;
+		ball.style.left = maxX+ 'px';
+	}else if(event.clientX < ball.clientWidth){
+		ball.style.left = 0+ 'px';
+	}else{
+		let left = event.clientX-ball.clientWidth/2;
+		ball.style.left = left + 'px';
+	}
+	if(event.clientY>field.clientHeight-ball.clientHeight/2){
+		let maxY = field.clientHeight - ball.clientHeight;
+		ball.style.top = maxY + 'px';
+	}else if(event.clientY < ball.clientHeight/2){
+		ball.style.top = 0 +'px';
+	}else{
+		let tOp = event.clientY - ball.clientHeight/2;
+		ball.style.top = tOp + 'px';
+	}
+});
