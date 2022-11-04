@@ -28,22 +28,36 @@
 /*	position: absolute;*/
 /*}*/
 
-body{
-	height: 2000px;
-	padding: 0;
-	margin: 0;
+/*body{*/
+/*	height: 2000px;*/
+/*	padding: 0;*/
+/*	margin: 0;*/
+/*}*/
+
+/*#field {*/
+/*	width: 200px;*/
+/*	height: 150px;*/
+/*	border: 10px solid black;*/
+/*	background-color: #00FF00;*/
+/*	overflow: hidden;*/
+/*	position: relative;*/
+/*}*/
+
+/*#ball {*/
+/*	position: absolute;*/
+/*	transition: 0.5s all;*/
+/*}*/
+
+.visible{
+	display: none;
 }
 
-#field {
-	width: 200px;
-	height: 150px;
-	border: 10px solid black;
-	background-color: #00FF00;
-	overflow: hidden;
-	position: relative;
+.close::before{
+	content: '▶';
+	color: green;
 }
 
-#ball {
-	position: absolute;
-	transition: 0.5s all;
+.open::before{
+	content:'▼';
+	color: green;
 }
