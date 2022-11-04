@@ -1218,16 +1218,22 @@
 // });
 
 
-let title = document.querySelector('span');
-let list = document.querySelector('ul');
+// let title = document.querySelector('span');
+// let list = document.querySelector('ul');
+//
+// title.addEventListener('click', ()=>{
+// 	list.classList.toggle('visible');
+// 	if(list.classList.contains('visible')){
+// 		title.classList.remove('open');
+// 		title.classList.add('close');
+// 	}else if(!list.classList.contains('visible')){
+// 		title.classList.remove('close');
+// 		title.classList.add('open');
+// 	}
+// })
 
-title.addEventListener('click', ()=>{
-	list.classList.toggle('visible');
-	if(list.classList.contains('visible')){
-		title.classList.remove('open');
-		title.classList.add('close');
-	}else if(!list.classList.contains('visible')){
-		title.classList.remove('close');
-		title.classList.add('open');
-	}
+let cards = document.querySelectorAll('.pane');
+
+cards.forEach(card=>{
+	card.addEventListener('click', ()=>card.remove())
 })
