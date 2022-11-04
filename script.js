@@ -1232,8 +1232,37 @@
 // 	}
 // })
 
-let cards = document.querySelectorAll('.pane');
+// let cards = document.querySelectorAll('.pane');
+//
+// cards.forEach(card=>{
+// 	card.addEventListener('click', ()=>card.remove())
+// }
 
-cards.forEach(card=>{
-	card.addEventListener('click', ()=>card.remove())
+
+let imgContainer = document.querySelector('.img-line');
+let leftBtn = document.querySelector('.left');
+let rightBtn = document.querySelector('.right');
+let move = 0;
+
+rightBtn.addEventListener('click', () => {
+	if(move ==0 || move>-780){
+		move -= 390;
+	}else if(move==-780){
+		move -= 130;
+	}else if(move<=-910){
+		move -= 0;
+	}
+	imgContainer.style.left = move +'px';
 })
+
+leftBtn.addEventListener('click', () => {
+	if(move ==0){
+		move += 0;
+	}else if(move==-130) {
+		move += 130;
+	}else{
+		move += 390;
+	}
+	imgContainer.style.left = move +'px';
+})
+

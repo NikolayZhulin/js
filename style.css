@@ -62,42 +62,74 @@
 /*	color: green;*/
 /*}*/
 
-body {
-	margin: 10px auto;
-	width: 470px;
+/*body {*/
+/*	margin: 10px auto;*/
+/*	width: 470px;*/
+/*}*/
+
+/*h3 {*/
+/*	margin: 0;*/
+/*	padding-bottom: .3em;*/
+/*	font-size: 1.1em;*/
+/*}*/
+
+/*p {*/
+/*	margin: 0;*/
+/*	padding: 0 0 .5em;*/
+/*}*/
+
+/*.pane {*/
+/*	background: #edf5e1;*/
+/*	padding: 10px 20px 10px;*/
+/*	border-top: solid 2px #c4df9b;*/
+/*	position: relative;*/
+/*}*/
+
+/*.remove-button {*/
+/*	font-size: 110%;*/
+/*	color: darkred;*/
+/*	right: 10px;*/
+/*	width: 24px;*/
+/*	height: 24px;*/
+/*	border: none;*/
+/*	background: transparent;*/
+/*	cursor: pointer;*/
+/*}*/
+
+/*.remove-button{*/
+/*	position: absolute;*/
+/*	top:10px;*/
+/*	right: 10px;*/
+/*}*/
+
+body{
+	background: grey;
+	display: flex;
+	justify-content: center;
 }
 
-h3 {
-	margin: 0;
-	padding-bottom: .3em;
-	font-size: 1.1em;
+.wrapper{
+	width: 500px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: nowrap;
+	background: white;
+	border-radius: 20px;
+}
+.slider{
+	overflow: hidden;
 }
 
-p {
-	margin: 0;
-	padding: 0 0 .5em;
-}
-
-.pane {
-	background: #edf5e1;
-	padding: 10px 20px 10px;
-	border-top: solid 2px #c4df9b;
+.img-line{
+	display: flex;
+	flex-direction: row;
+	max-width: 390px;
 	position: relative;
+	left:0;
+	transition: 0.5s all;
 }
 
-.remove-button {
-	font-size: 110%;
-	color: darkred;
-	right: 10px;
-	width: 24px;
-	height: 24px;
-	border: none;
-	background: transparent;
-	cursor: pointer;
-}
-
-.remove-button{
-	position: absolute;
-	top:10px;
-	right: 10px;
+image{
+	width: 200px;
 }
