@@ -1267,18 +1267,47 @@
 // })
 //
 
+//
+// let arr = [20,4,-3,0,1,4,5,67,8];
+// let temp;
+//
+// for(let i= 0;i<arr.length;i++){
+// 	for(let j= arr.length-1;j>=i;j--){
+// 		if(arr[j]<arr[i]){
+// 		temp = arr[j];
+// 		arr[j] = arr[i];
+// 		arr[i]=temp;
+// 		}
+// 	}
+// }
+//
+// console.log(arr);
 
-let arr = [20,4,-3,0,1,4,5,67,8];
-let temp;
+// let btn = document.querySelector('.btn');
+// let input = document.querySelector('.input');
+//
+// btn.addEventListener('click',()=>{
+// 	console.log('dv')
+// 	if(input.type!= 'password'){
+// 		input.type = 'password';
+// 		btn.value = 'Show';
+// 	}else if(input.type!='text'){
+// 		input.type = 'text';
+// 		btn.value = 'Hide';
+// 	}
+// })
 
-for(let i= 0;i<arr.length;i++){
-	for(let j= arr.length-1;j>=i;j--){
-		if(arr[j]<arr[i]){
-		temp = arr[j];
-		arr[j] = arr[i];
-		arr[i]=temp;
-		}
-	}
+
+let container = document.querySelector('#container');
+console.log(container)
+container.addEventListener('click', function(event){
+	let target = event.target;
+	console.log(target)
+	if(!target.classList.contains('remove-button')) return;
+	let div = target.closest('div');
+	deleteDiv(div);
+})
+
+function deleteDiv(div){
+	div.remove();
 }
-
-console.log(arr);
