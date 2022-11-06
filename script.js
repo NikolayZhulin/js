@@ -1298,16 +1298,32 @@
 // })
 
 
-let container = document.querySelector('#container');
-console.log(container)
-container.addEventListener('click', function(event){
-	let target = event.target;
-	console.log(target)
-	if(!target.classList.contains('remove-button')) return;
-	let div = target.closest('div');
-	deleteDiv(div);
-})
+// let container = document.querySelector('#container');
+// console.log(container)
+// container.addEventListener('click', function(event){
+// 	let target = event.target;
+// 	console.log(target)
+// 	if(!target.classList.contains('remove-button')) return;
+// 	let div = target.closest('div');
+// 	deleteDiv(div);
+// })
+//
+// function deleteDiv(div){
+// 	div.remove();
+// }
 
-function deleteDiv(div){
-	div.remove();
-}
+let table = document.querySelector('#grid');
+
+table.addEventListener('click', (event) => {
+	let tr = document.querySelectorAll('tr');
+	let type = event.target.dataset.type;
+	if (type == 'string') {
+		let sortNames = Array.from(tr).slice(1).sort((a, b) => a.cells[1].innerHTML>b.cells[1].innerHTML?1:-1 );
+		table.tBodies[0].append(...sortNames);
+	}
+	if (type == 'number') {
+		let sortNumbers = Array.from(tr).slice(1).sort((a, b) => a.cells[0].innerHTML-b.cells[0].innerHTML);
+		table.tBodies[0].append(...sortNumbers);
+	}
+	
+})
