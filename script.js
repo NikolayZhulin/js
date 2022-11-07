@@ -1343,26 +1343,45 @@
 // 	}
 // })
 
-document.addEventListener('mouseover',(event)=> {
-	let target = event.target;
-	let id = event.target.dataset.tooltip;
-	if (!id) return;
-	let popUp = document.createElement('div');
-	popUp.classList.add('tooltip');
-	popUp.innerHTML = id;
-	let btnPos = target.getBoundingClientRect();
-	popUp.style.left = btnPos.left + 'px';
-	target.prepend(popUp);
-	if(scrollY>btnPos.top+popUp.offsetHeight){
-		popUp.style.top = (btnPos.top+target.offsetHeight + 5) + 'px';
-}else{
-		popUp.style.top = (btnPos.top - popUp.offsetHeight - 5) + 'px';
-	}
-})
+// document.addEventListener('mouseover',(event)=> {
+// 	let target = event.target;
+// 	let id = event.target.dataset.tooltip;
+// 	if (!id) return;
+// 	let popUp = document.createElement('div');
+// 	popUp.classList.add('tooltip');
+// 	popUp.innerHTML = id;
+// 	let btnPos = target.getBoundingClientRect();
+// 	popUp.style.left = btnPos.left + 'px';
+// 	target.prepend(popUp);
+// 	if(scrollY>btnPos.top+popUp.offsetHeight){
+// 		popUp.style.top = (btnPos.top+target.offsetHeight + 5) + 'px';
+// }else{
+// 		popUp.style.top = (btnPos.top - popUp.offsetHeight - 5) + 'px';
+// 	}
+// })
+//
+// document.addEventListener('mouseout',(event)=>{
+// 	let id = event.target.dataset.tooltip;
+// 	if(!id) return;
+// 	let popUp = document.querySelector('.tooltip')
+// 	popUp.remove();
+// })
 
-document.addEventListener('mouseout',(event)=>{
-	let id = event.target.dataset.tooltip;
-	if(!id) return;
-	let popUp = document.querySelector('.tooltip')
-	popUp.remove();
-})
+// function squareSum(numbers){
+// 	let newArr=[];
+// for(let number of numbers){
+// 	newArr.push(number**2);
+// }
+// let sum=0;
+// for(let num of newArr){
+// 	sum+=num
+// }
+// return sum;
+// }
+// console.log(squareSum([1, 2, 2]))
+
+function reverseWords(str) {
+	let reversArrOfStr = str.split(' ').map(a=>a.split('').reverse().join(''))
+	return reversArrOfStr.join(' ');
+}
+reverseWords("This is an example!");
