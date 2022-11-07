@@ -1237,8 +1237,11 @@
 // let cards = document.querySelectorAll('.pane');
 //
 // cards.forEach(card=>{
-// 	card.addEventListener('click', ()=>card.remove())
-// }
+// 	card.addEventListener('click', (e)=>{
+// 		if(e.target.classList.contains('remove-button'))
+// 		card.remove()
+// 	})
+// })
 
 
 // let imgContainer = document.querySelector('.img-line');
@@ -1380,8 +1383,35 @@
 // }
 // console.log(squareSum([1, 2, 2]))
 
-function reverseWords(str) {
-	let reversArrOfStr = str.split(' ').map(a=>a.split('').reverse().join(''))
-	return reversArrOfStr.join(' ');
+// function reverseWords(str) {
+// 	let reversArrOfStr = str.split(' ').map(a=>a.split('').reverse().join(''))
+// 	return reversArrOfStr.join(' ');
+// }
+// reverseWords("This is an example!");
+
+// let content = document.querySelector('#contents')
+//
+// function hrefCatcher(event){
+// 	let target = event.target.closest('a');
+// 	if(!target) return;
+// 	let question = confirm('perehod?');
+// 	if(question == false){
+// 		event.preventDefault();
+// 	}
+// }
+//
+// content.addEventListener('click',hrefCatcher);
+
+let imgList = document.querySelector('#thumbs');
+let bigImg = document.querySelector('#largeImg');
+
+function changeImg(event){
+	let target = event.target;
+	if(!target.closest('a')) return;
+	event.preventDefault();
+
+	let aOfTarget = target.closest('a').href;
+	bigImg.src=aOfTarget;
 }
-reverseWords("This is an example!");
+
+imgList.addEventListener('click', changeImg)
