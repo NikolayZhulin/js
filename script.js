@@ -1402,16 +1402,34 @@
 //
 // content.addEventListener('click',hrefCatcher);
 
-let imgList = document.querySelector('#thumbs');
-let bigImg = document.querySelector('#largeImg');
+// let imgList = document.querySelector('#thumbs');
+// let bigImg = document.querySelector('#largeImg');
+//
+// function changeImg(event){
+// 	let target = event.target;
+// 	if(!target.closest('a')) return;
+// 	event.preventDefault();
+//
+// 	let aOfTarget = target.closest('a').href;
+// 	bigImg.src=aOfTarget;
+// }
+// imgList.addEventListener('click', changeImg)
 
-function changeImg(event){
-	let target = event.target;
-	if(!target.closest('a')) return;
-	event.preventDefault();
-
-	let aOfTarget = target.closest('a').href;
-	bigImg.src=aOfTarget;
+// function sum (numbers) {
+// 	return numbers.reduce((sum,num)=>sum + num, 0)
+// };
+//
+//
+// console.log(sum ([1,2,3,4]));
+//
+function getDivisorsCnt(n){
+let arr = [];
+for(let i = 1;i<=n;i++){
+	if(n%i==0){
+		arr.push(i);
+	}
+}
+return arr.length;
 }
 
-imgList.addEventListener('click', changeImg)
+console.log(getDivisorsCnt(10));
