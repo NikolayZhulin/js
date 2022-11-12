@@ -1334,7 +1334,6 @@
 // })
 
 
-
 // let animalsList = document.querySelector('#tree')
 //
 // animalsList.addEventListener('click', (event)=>{
@@ -1422,14 +1421,71 @@
 //
 // console.log(sum ([1,2,3,4]));
 //
-function getDivisorsCnt(n){
-let arr = [];
-for(let i = 1;i<=n;i++){
-	if(n%i==0){
-		arr.push(i);
-	}
-}
-return arr.length;
+// function getDivisorsCnt(n){
+// let arr = [];
+// for(let i = 1;i<=n;i++){
+// 	if(n%i==0){
+// 		arr.push(i);
+// 	}
+// }
+// return arr.length;
+// }
+//
+// console.log(getDivisorsCnt(10));
+
+// let modalWindow = document.querySelector('#prompt-form-container');
+// let btnForModal = document.querySelector('button');
+// let form = document.querySelector('#prompt-form');
+// let valueInput = document.querySelector('.val');
+// let container = document.querySelector('.container')
+// modalWindow.style.display = 'none';
+// btnForModal.addEventListener('click', () => showPrompt('vvedite 4to-nibud', (value) => {
+// 	if (value == null || value == '') {
+// 		alert('Вы ввели: ' + null)
+// 	} else {
+// 		alert(value)
+// 	}
+// 	container.removeAttribute('inert');
+// }))
+//
+// function showPrompt(html, callback) {
+//
+// 	let promptMessage = document.querySelector('#prompt-message');
+// 	promptMessage.innerHTML = html;
+// 	modalWindow.style.display = 'block';
+// 	valueInput.focus();
+// 	container.setAttribute('inert', 'true');
+// 	form.addEventListener('submit', () => callback(valueInput.value))
+// 	form.addEventListener('click', (event) => {
+// 		let target = event.target
+// 		if (target.value == 'Отмена') {
+// 			callback(null)
+// 			modalWindow.style.display = 'none';
+// 			valueInput.value = '';
+// 			container.removeAttribute('inert');
+// 		}
+// 	})
+// }
+
+// function arrayDiff(a, b) {
+// 	let newArr = [];
+// 	if(b.length===0){
+// 		return a;
+// 	}
+// 	if (a.length > 0) {
+// 		for (let i = 0; i < b.length; i++) {
+// 			for (let j = 0; j < a.length; j++) {
+// 				if (a[j] !== b[i]) {
+// 					newArr.push(a[j])
+// 				}
+// 			}
+// 		}
+// 	}
+// 	return newArr;
+// }
+
+function arrayDiff(a, b) {
+	return a.filter(item=>!b.includes(item))
 }
 
-console.log(getDivisorsCnt(10));
+arrayDiff([1, 2], [1])

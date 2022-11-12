@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>Document</title>
 	<link rel="stylesheet" href="style.css"/>
+	<script defer src="script.js"></script>
 </head>
 <body>
 
@@ -178,8 +179,19 @@
 <!--		<a href="https://en.js.cx/gallery/img6-lg.jpg" title="Image 6"><img src="https://en.js.cx/gallery/img6-thumb.jpg"></a>-->
 <!--	</li>-->
 <!--</ul>-->
+<div class="container">
+	<div class="title">Кликните на кнопку ниже</div>
+	<button class="modal-button">кнопка для вызова модального окна</button>
+</div>
+<div id="prompt-form-container">
+	<form class = 'form' id="prompt-form">
+		<div id="prompt-message">Введите что-нибудь...
+			<br>Пожалуйста..</div>
+		<input class = 'val' name="text" type="text" >
+		<input  type="submit" value="Ok">
+		<input type="button" name="cancel" value="Отмена">
+	</form>
+</div>
 
-
-<script src="script.js"></script>
 </body>
 </html>
