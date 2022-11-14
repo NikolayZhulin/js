@@ -1484,8 +1484,96 @@
 // 	return newArr;
 // }
 
-function arrayDiff(a, b) {
-	return a.filter(item=>!b.includes(item))
+// function arrayDiff(a, b) {
+// 	return a.filter(item=>!b.includes(item))
+// }
+//
+// arrayDiff([1, 2], [1])
+
+// let calculator = {
+// 	read:function(){
+// 		this.a  = prompt('a')
+// 		this.b = prompt('b')
+// 	},
+// 	sum:function(){
+// 		return +this.a + +this.b
+// 	},
+// 	mul:function(){
+// 		return this.a * this.b
+// 	},
+// };
+//
+// calculator.read();
+// alert( calculator.sum() );
+// alert( calculator.mul() );
+
+// function evenOrOdd(number) {
+// 	return (number%2==0)?'Even':'Odd'
+// }
+//
+//
+// console.log(evenOrOdd(8))
+
+// function duplicateEncode(word) {
+// 	let arr = word.toLowerCase().split('');
+// 	return arr.map((w, ind) => {
+// 		let newArr = [
+// 			...arr.slice(0,ind),
+// 			...arr.slice(ind+1)
+// 		]
+// 		console.log(newArr)
+// 		return(
+// 			newArr.includes(w)?')':'('
+// 		)
+// 	}).join('')
+//
+// }
+//
+// console.log(duplicateEncode("recede"))
+
+
+//
+// let myArray = ['one', 'two', 'three'];
+// let myIndex = myArray.indexOf('two');
+//
+// if (myIndex !== -1) {
+// 	myArray.splice(myIndex, 1);
+// }
+//
+// console.log(myArray)
+
+// function Calculator(){
+// 	this.read=function(){
+// 		this.a  = prompt('a')
+// 		this.b = prompt('b')
+// 	},
+// 		this.sum=function(){
+// 		return +this.a + +this.b
+// 	},
+// 	this.mul=function(){
+// 		return this.a * this.b
+// 	}
+// }
+//
+// let calculator = new Calculator();
+// calculator.read();
+//
+// alert( "Sum=" + calculator.sum() );
+// alert( "Mul=" + calculator.mul() );
+
+function Accumulator(startValue) {
+	this.value = startValue
+	this.read = function () {
+		this.value += +prompt('vvedi 4islo')
+	}
 }
 
-arrayDiff([1, 2], [1])
+let accumulator = new Accumulator(1); // начальное значение 1
+
+accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
+accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
+accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
+accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
+accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
+
+alert(accumulator.value); // выведет сумму этих значений
