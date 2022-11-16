@@ -1561,19 +1561,53 @@
 // alert( "Sum=" + calculator.sum() );
 // alert( "Mul=" + calculator.mul() );
 
-function Accumulator(startValue) {
-	this.value = startValue
-	this.read = function () {
-		this.value += +prompt('vvedi 4islo')
+// function Accumulator(startValue) {
+// 	this.value = startValue
+// 	this.read = function () {
+// 		this.value += +prompt('vvedi 4islo')
+// 	}
+// }
+//
+// let accumulator = new Accumulator(1); // начальное значение 1
+//
+// accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
+// accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
+// accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
+// accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
+// accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
+// accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
+//
+// alert(accumulator.value); // выведет сумму этих значений
+
+// function XO(str) {
+// 	let xArr=[];
+// 	let oArr=[];
+// 	let arr = str.toLowerCase().split('');
+// 	for(let i=0;i<=arr.length;i++){
+// 		if(arr[i]=='x'){
+// 			xArr.push(arr[i])
+// 		}
+// 		if(arr[i]=='o'){
+// 			oArr.push(arr[i])
+// 		}
+// 	}
+// 	return xArr.length==oArr.length?true:false
+// }
+//
+// XO("xxOo");
+
+function persistence(num) {
+	let numbers = String(num).split('');
+	let counter = 0
+	while (numbers.length>1) {
+		numbers = numbers.reduce((acc, n) => {
+			return acc * n
+		}, 1)
+		numbers = String(numbers).split('')
+		console.log(numbers)
+		counter++
 	}
+	return counter
 }
 
-let accumulator = new Accumulator(1); // начальное значение 1
-
-accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
-accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
-accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
-accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
-accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
-
-alert(accumulator.value); // выведет сумму этих значений
+persistence(999);
