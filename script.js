@@ -1596,18 +1596,20 @@
 //
 // XO("xxOo");
 
-function persistence(num) {
-	let numbers = String(num).split('');
-	let counter = 0
-	while (numbers.length>1) {
-		numbers = numbers.reduce((acc, n) => {
-			return acc * n
-		}, 1)
-		numbers = String(numbers).split('')
-		console.log(numbers)
-		counter++
-	}
-	return counter
+// function persistence(num) {
+// 	let numbers = String(num).split('');
+// 	let counter = 0
+// 	while (numbers.length>1) {
+// 		numbers = numbers.reduce((acc, n) => (acc * n), 1)
+// 		numbers = String(numbers).split('')
+// 		counter++
+// 	}
+// 	return counter
+// }
+//
+// persistence(999);
+function maps(x){
+	return x.map(x=>x*2)
 }
 
-persistence(999);
+maps([1,2,3,4,5,6,7,8,9])
