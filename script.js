@@ -1617,13 +1617,13 @@
 //
 // function findUniq(arr) {
 // 	return arr.find((item,ind)=>{
-		// if(item===arr.length-1){
-		// 	return item!==arr[ind-1]
-		// }else if(ind===0){
-		// 	return item!==arr[ind+1]&&item!==arr[ind+2]
-		// }else{
-		// 	return item!==arr[ind+1]&&item!==arr[ind-1]
-		// }
+// if(item===arr.length-1){
+// 	return item!==arr[ind-1]
+// }else if(ind===0){
+// 	return item!==arr[ind+1]&&item!==arr[ind+2]
+// }else{
+// 	return item!==arr[ind+1]&&item!==arr[ind-1]
+// }
 // 		return ind===0?item!==arr[ind+1]&&item!==arr[ind+2]:item!==arr[ind+1]&&item!==arr[ind-1]
 // 	})
 // }
@@ -1655,6 +1655,23 @@
 //
 // console.log(invert([1,2,-3,4,5,6]))
 
-var isSquare = function(n){
-	return false; // fix me
+// let isSquare = function (n) {
+// 	return n>0?n%Math.sqrt(n)==0:n==0?true:false
+// }
+//
+// console.log(isSquare(3))
+
+var uniqueInOrder=function(iterable){
+	console.log([...iterable]);
+	let arr;
+	if(Array.isArray(iterable)){
+		arr = iterable;
+	}else if(typeof(iterable)=='number'){
+		arr = String(iterable).split('')
+	}else{
+		arr = iterable.split('')
+	}
+	return arr.filter((el,i,ar)=>el!== ar[i+1])
 }
+
+console.log(uniqueInOrder(12333))
