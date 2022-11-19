@@ -1608,8 +1608,53 @@
 // }
 //
 // persistence(999);
-function maps(x){
-	return x.map(x=>x*2)
-}
 
-maps([1,2,3,4,5,6,7,8,9])
+// function maps(x){
+// 	return x.map(x=>x*2)
+// }
+//
+// maps([1,2,3,4,5,6,7,8,9])
+//
+// function findUniq(arr) {
+// 	return arr.find((item,ind)=>{
+		// if(item===arr.length-1){
+		// 	return item!==arr[ind-1]
+		// }else if(ind===0){
+		// 	return item!==arr[ind+1]&&item!==arr[ind+2]
+		// }else{
+		// 	return item!==arr[ind+1]&&item!==arr[ind-1]
+		// }
+// 		return ind===0?item!==arr[ind+1]&&item!==arr[ind+2]:item!==arr[ind+1]&&item!==arr[ind-1]
+// 	})
+// }
+//
+//
+// console.log(findUniq([ 3, 10, 3, 3, 3 ]))
+
+// let user = {
+// 	name: "John",
+// 	years: 30
+// };
+//
+// let {name, years, isAdmin = false} = user
+//
+// console.log(name)
+// console.log(years)
+// console.log(isAdmin)
+
+// function addElementInArray(arr,el){
+// 	arr[arr.length] = el;
+// 	return arr;
+// }
+// console.log(addElementInArray([1,2,3,4,5],6))
+
+
+// function invert(array) {
+// 	return array.map(el=>-el)
+// }
+//
+// console.log(invert([1,2,-3,4,5,6]))
+
+var isSquare = function(n){
+	return false; // fix me
+}
