@@ -1661,17 +1661,77 @@
 //
 // console.log(isSquare(3))
 
-var uniqueInOrder=function(iterable){
-	console.log([...iterable]);
-	let arr;
-	if(Array.isArray(iterable)){
-		arr = iterable;
-	}else if(typeof(iterable)=='number'){
-		arr = String(iterable).split('')
-	}else{
-		arr = iterable.split('')
-	}
-	return arr.filter((el,i,ar)=>el!== ar[i+1])
+// var uniqueInOrder=function(iterable){
+// 	console.log([...iterable]);
+// 	let arr;
+// 	if(Array.isArray(iterable)){
+// 		arr = iterable;
+// 	}else if(typeof(iterable)=='number'){
+// 		arr = String(iterable).split('')
+// 	}else{
+// 		arr = iterable.split('')
+// 	}
+// 	return arr.filter((el,i,ar)=>el!== ar[i+1])
+// }
+//
+// console.log(uniqueInOrder(12333))
+
+
+// let salaries = {
+// 	"John": 100,
+// 	"Pete": 300,
+// 	"Mary": 250
+// };
+//
+// let sum = 0;
+// for(let num of Object.values(salaries)){
+// 	sum+=num;
+// }
+// console.log(sum);
+//
+// let user = {
+// 	name: 'John',
+// 	age: 30
+// };
+//
+// let count =(obj)=>{
+// 	return Object.values(obj).length
+// }
+//
+// alert( count(user) );
+
+// function noSpace(x){
+// return x.trim().split(' ').join('')
+// }
+//
+// console.log(noSpace('8aaaaa dddd r     '))
+
+// function isPangram(string) {
+// 	let alphavite = 'abcdefghijklmnopqrstuvwxyz'
+// 	let newStr = string.replace(/\s+/g, " ").split(' ').join('').toLowerCase()
+// 	console.log(newStr)
+// 	for (let i = 0; i < alphavite.length; i++) {
+// 		if (newStr.indexOf(alphavite[i])===-1) {
+// 			return false;
+// 		}
+//
+// 	}
+// 	return true;
+// }
+//
+//
+// console.log(isPangram("The quick brown fox jumps over the lazy dog."))
+
+const mulWord=(a)=>{
+	let arr=[]
+ a.split('').map((item,ind)=>{
+		for(let i = 0; i<ind+1;i++){
+		 arr.push(`-${item}`)
+		}
+	})
+	return arr;
 }
 
-console.log(uniqueInOrder(12333))
+
+
+console.log(mulWord('abc'))
