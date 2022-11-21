@@ -1722,16 +1722,15 @@
 //
 // console.log(isPangram("The quick brown fox jumps over the lazy dog."))
 
-const mulWord=(a)=>{
-	let arr=[]
- a.split('').map((item,ind)=>{
-		for(let i = 0; i<ind+1;i++){
-		 arr.push(`-${item}`)
-		}
-	})
-	return arr;
-}
-
-
-
-console.log(mulWord('abc'))
+// const mulWord = (a) => {
+// 	return  a.toLowerCase().split('').reduce((acc, item, ind) => {
+// 		acc[ind] = item.toUpperCase();
+// 		for (let i = 0; i < ind; i++) {
+// 			acc[ind] += item;
+// 		}
+// 		return acc;
+// 	}, []).join('-')
+// }
+//
+//
+// console.log(mulWord('abcD'))
