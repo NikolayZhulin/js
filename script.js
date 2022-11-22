@@ -1734,3 +1734,37 @@
 //
 //
 // console.log(mulWord('abcD'))
+
+function Calculator(){
+	this.operation={
+		'+':(a,b)=>a+b,
+		'-':(a,b)=>a-b,
+	}
+	
+	this.calculate =function (exp){
+		let expression = exp.split(' ');
+		let a = +expression[0];
+		let op = expression[1];
+		let b = +expression[2];
+		
+		if(!op||isNaN(a)||isNaN(b)){
+			return NaN
+		}
+		
+		return this.operation[op](a,b);
+	}
+	
+	this.addMethod=function(op, exp){
+		this.operation[op] = exp;
+	}
+	
+}
+
+let powerCalc = new Calculator;
+powerCalc.addMethod("*", (a, b) => a * b);
+powerCalc.addMethod("/", (a, b) => a / b);
+powerCalc.addMethod("**", (a, b) => a ** b);
+
+let result = powerCalc.calculate("2 + 3");
+console.log(( result )); // 8
+console.log(( powerCalc )); // 8
