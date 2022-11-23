@@ -1735,36 +1735,86 @@
 //
 // console.log(mulWord('abcD'))
 
-function Calculator(){
-	this.operation={
-		'+':(a,b)=>a+b,
-		'-':(a,b)=>a-b,
+// function Calculator(){
+// 	this.operation={
+// 		'+':(a,b)=>a+b,
+// 		'-':(a,b)=>a-b,
+// 	}
+//
+// 	this.calculate =function (exp){
+// 		let expression = exp.split(' ');
+// 		let a = +expression[0];
+// 		let op = expression[1];
+// 		let b = +expression[2];
+//
+// 		if(!op||isNaN(a)||isNaN(b)){
+// 			return NaN
+// 		}
+//
+// 		return this.operation[op](a,b);
+// 	}
+//
+// 	this.addMethod=function(op, exp){
+// 		this.operation[op] = exp;
+// 	}
+//
+// }
+//
+// let powerCalc = new Calculator;
+// powerCalc.addMethod("*", (a, b) => a * b);
+// powerCalc.addMethod("/", (a, b) => a / b);
+// powerCalc.addMethod("**", (a, b) => a ** b);
+//
+// let result = powerCalc.calculate("2 + 3");
+// console.log(( result )); // 8
+// console.log(( powerCalc )); // 8
+
+
+// function unique(arr) {
+// 	let set = new Set(arr)
+// 	return Array.from(set)
+// }
+//
+// let values = ["Hare", "Krishna", "Hare", "Krishna",
+// 	"Krishna", "Krishna", "Hare", "Hare", ":-O"
+// ];
+//
+// alert( unique(values) );
+
+// const aclean = (arr) => {
+// 	let newArr = arr.map(a => a.toLowerCase().split('').sort().join(''));
+// 	let set = new Set(newArr)
+// 	let sortArr = Array.from(set)
+// 	let result = [];
+// 	for(let i = 0;i<newArr.length;i++){
+// 		if(newArr.indexOf(sortArr[i])!==-1)
+// 		result.push(newArr.indexOf(sortArr[i]))
+// 	}
+// 	let result2 = [];
+// 	for(let j = 0; j<arr.length;j++){
+// 		for(let k = 0; k<result.length;k++){
+// 			if(j===result[k]){
+// 				result2.push(arr[j])
+// 			}
+// 		}
+// 	}
+// 	return result2;
+// 	}
+
+function aclean(arr) {
+	let map = new Map();
+	
+	for (let word of arr) {
+		// разбиваем слово на буквы, сортируем и объединяем снова в строку
+		let sorted = word.toLowerCase().split("").sort().join(""); // (*)
+		map.set(sorted, word);
 	}
 	
-	this.calculate =function (exp){
-		let expression = exp.split(' ');
-		let a = +expression[0];
-		let op = expression[1];
-		let b = +expression[2];
-		
-		if(!op||isNaN(a)||isNaN(b)){
-			return NaN
-		}
-		
-		return this.operation[op](a,b);
-	}
-	
-	this.addMethod=function(op, exp){
-		this.operation[op] = exp;
-	}
-	
+	return Array.from(map.values());
 }
 
-let powerCalc = new Calculator;
-powerCalc.addMethod("*", (a, b) => a * b);
-powerCalc.addMethod("/", (a, b) => a / b);
-powerCalc.addMethod("**", (a, b) => a ** b);
 
-let result = powerCalc.calculate("2 + 3");
-console.log(( result )); // 8
-console.log(( powerCalc )); // 8
+let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+console.log(aclean(arr));
+// &&
