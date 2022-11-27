@@ -1801,20 +1801,128 @@
 // 	return result2;
 // 	}
 
-function aclean(arr) {
-	let map = new Map();
-	
-	for (let word of arr) {
-		// разбиваем слово на буквы, сортируем и объединяем снова в строку
-		let sorted = word.toLowerCase().split("").sort().join(""); // (*)
-		map.set(sorted, word);
-	}
-	
-	return Array.from(map.values());
+// function aclean(arr) {
+// 	let map = new Map();
+//
+// 	for (let word of arr) {
+// 		// разбиваем слово на буквы, сортируем и объединяем снова в строку
+// 		let sorted = word.toLowerCase().split("").sort().join(""); // (*)
+// 		map.set(sorted, word);
+// 	}
+//
+// 	return Array.from(map.values());
+// }
+//
+//
+// let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+//
+// console.log(aclean(arr));
+// &&
+
+// function sum(n) {
+//     let finalSum = 0
+//     for (let i = 0; i <= n; i++) {
+// 		finalSum= finalSum + i
+//     }
+//     return finalSum;
+// }
+//
+// console.log(sum(100))
+//
+//
+// function recursionSum(n) {
+//     if(n===1) return 1
+//     return n+recursionSum(n-1);
+// }
+//
+// console.log(recursionSum(100));
+
+
+// function factorial(n){
+//     if(n===1)return 1;
+//     return n*factorial(n-1);
+// }
+//
+// console.log(factorial(5));
+
+// function fib(n) {
+//     if (n === 0) return 0;
+//     if (n === 1) return 1;
+//     return fib(n - 1) + fib(n - 2);
+// }
+//
+// console.log(fib(7)); // 2
+
+let list = {
+    value: 1,
+    next: {
+        value: 2,
+        next: {
+            value: 3,
+            next: {
+                value: 4,
+                next: null
+            }
+        }
+    }
+};
+
+
+// function printList(list){
+//
+//         console.log(list.value)
+//
+//     if(list.next){
+//         return printList(list.next)
+//     }
+// }
+// function printList(list){
+//     console.log(list.value)
+//     if(list.next){
+//          printList(list.next)
+//     }
+// }
+
+// function printList(list) {
+//  while(list){
+//      console.log(list.value)
+//      list = list.next
+//  }
+// }
+
+// function printList(list) {
+//     let arr=[];
+//  while(list){
+//      arr.push(list.value)
+//      list = list.next
+//  }
+//
+//  for (let i = arr.length-1; i>= 0; i--){
+//      console.log(arr[i])
+//  }
+//
+// }
+// printList(list);
+
+let company = {
+    sales: [{name: 'John', salary: 1000}, {name: 'Alice', salary: 600}],
+    development: {
+        sites: [{name: 'Peter', salary: 2000}, {name: 'Alex', salary: 1800}],
+        internals: [{name: 'Jack', salary: 1300}]
+    }
+};
+
+function sumSalary(obj) {
+    if (Array.isArray(obj)) {
+        return obj.reduce(((acc, el) => acc += el.salary), 0)
+    } else {
+        let sum = 0;
+        for (let seb in obj){
+            console.log(obj[seb])
+            sum += sumSalary(obj[seb])
+        }
+        return sum
+    }
 }
 
-
-let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
-
-console.log(aclean(arr));
-// &&
+console.log(sumSalary(company))
