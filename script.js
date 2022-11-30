@@ -1935,14 +1935,46 @@ let list = {
 //
 // console.log(sum(5)(-1));
 
-let arr = [1, 2, 3, 4, 5, 6, 7];
+// let arr = [1, 2, 3, 4, 5, 6, 7];
+//
+// function inBetween(a,b){
+//     return function(el){
+//         if(a<=el&& b>=el){
+//             return true
+//         }
+//     }
+// }
+//
+// alert( arr.filter(inBetween(3, 6)) ); // 3,4,5,6
 
-function inBetween(a,b){
-    return function(el){
-        if(a<=el&& b>=el){
-            return true
-        }
-    }
-}
+// function inArray(arr) {
+//     return function (a) {
+//         for (let el of arr) {
+//             if (el === a) return true
+//         }
+//     }
+// }
 
-alert( arr.filter(inBetween(3, 6)) ); // 3,4,5,6
+// alert(arr.filter(inArray([1, 3, 10]))); // 3,4,5,6
+
+// let users = [
+//     { name: "John", age: 20, surname: "Johnson" },
+//     { name: "Pete", age: 18, surname: "Peterson" },
+//     { name: "Ann", age: 19, surname: "Hathaway" }
+// ];
+//
+// function byField(keyForSort){
+//     if(keyForSort==='name'){
+//         return function(a,b){
+//            return a.name > b.name?1:-1
+//         }
+//     }
+//     if(keyForSort==='age'){
+//         return function(a,b){
+//             return a.age - b.age
+//         }
+//     }
+// }
+//
+// console.log(users.sort(byField('age')))
+
