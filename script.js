@@ -1927,10 +1927,22 @@ let list = {
 // //
 // // console.log(sumSalary(company))\
 
-function sum(a){
-    return sum2=(b)=>{
-        return a+b
+// function sum(a){
+//     return sum2=(b)=>{
+//         return a+b
+//     }
+// }
+//
+// console.log(sum(5)(-1));
+
+let arr = [1, 2, 3, 4, 5, 6, 7];
+
+function inBetween(a,b){
+    return function(el){
+        if(a<=el&& b>=el){
+            return true
+        }
     }
 }
 
-console.log(sum(5)(-1));
+alert( arr.filter(inBetween(3, 6)) ); // 3,4,5,6
