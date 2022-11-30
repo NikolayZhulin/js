@@ -1904,25 +1904,33 @@ let list = {
 // }
 // printList(list);
 
-let company = {
-    sales: [{name: 'John', salary: 1000}, {name: 'Alice', salary: 600}],
-    development: {
-        sites: [{name: 'Peter', salary: 2000}, {name: 'Alex', salary: 1800}],
-        internals: [{name: 'Jack', salary: 1300}]
-    }
-};
+// let company = {
+// //     sales: [{name: 'John', salary: 1000}, {name: 'Alice', salary: 600}],
+// //     development: {
+// //         sites: [{name: 'Peter', salary: 2000}, {name: 'Alex', salary: 1800}],
+// //         internals: [{name: 'Jack', salary: 1300}]
+// //     }
+// // };
+// //
+// // function sumSalary(obj) {
+// //     if (Array.isArray(obj)) {
+// //         return obj.reduce(((acc, el) => acc += el.salary), 0)
+// //     } else {
+// //         let sum = 0;
+// //         for (let seb in obj){
+// //             console.log(obj[seb])
+// //             sum += sumSalary(obj[seb])
+// //         }
+// //         return sum
+// //     }
+// // }
+// //
+// // console.log(sumSalary(company))\
 
-function sumSalary(obj) {
-    if (Array.isArray(obj)) {
-        return obj.reduce(((acc, el) => acc += el.salary), 0)
-    } else {
-        let sum = 0;
-        for (let seb in obj){
-            console.log(obj[seb])
-            sum += sumSalary(obj[seb])
-        }
-        return sum
+function sum(a){
+    return sum2=(b)=>{
+        return a+b
     }
 }
 
-console.log(sumSalary(company))
+console.log(sum(5)(-1));
