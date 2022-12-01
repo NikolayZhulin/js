@@ -1978,3 +1978,30 @@ let list = {
 //
 // console.log(users.sort(byField('age')))
 
+// function makeArmy() {
+//     let shooters = [];
+//     let i = 0;
+//     while (i < 10) {
+//         let shooter = function() {
+//             let a =i
+//             return function wrapper(){
+//                alert( a );
+//            }
+//         };
+//         shooters.push(shooter(i));
+//         i++;
+//     }
+//     console.log(shooters)
+//     return shooters;
+// }
+//
+// let army = makeArmy();
+//
+// army[0](); // у 0-го стрелка будет номер 10
+// army[5]();
+
+function solution(string) {
+    return string.split('').map(elem=>elem===elem.toUpperCase()?` ${elem}`:elem).join('');
+}
+
+console.log(solution('camelCaseReally'))
