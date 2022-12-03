@@ -2000,8 +2000,29 @@ let list = {
 // army[0](); // у 0-го стрелка будет номер 10
 // army[5]();
 
-function solution(string) {
-    return string.split('').map(elem=>elem===elem.toUpperCase()?` ${elem}`:elem).join('');
+// function solution(string) {
+//     return string.split('').map(elem=>elem===elem.toUpperCase()?` ${elem}`:elem).join('');
+// }
+//
+// console.log(solution('camelCaseReally'))
+
+function makeArmy() {
+    let shooters = [];
+
+    let i = 0;
+    while (i < 10) {
+        let a = i
+        let shooter = function() { // функция shooter
+            alert( a ); // должна выводить порядковый номер
+        };
+        shooters.push(shooter);
+        i++;
+    }
+
+    return shooters;
 }
 
-console.log(solution('camelCaseReally'))
+let army = makeArmy();
+
+army[0](); // у 0-го стрелка будет номер 10
+army[5]();
