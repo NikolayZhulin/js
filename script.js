@@ -2006,23 +2006,32 @@ let list = {
 //
 // console.log(solution('camelCaseReally'))
 
-function makeArmy() {
-    let shooters = [];
+// function makeArmy() {
+//     let shooters = [];
+//
+//     let i = 0;
+//     while (i < 10) {
+//         let a = i
+//             let shooter = function() { // функция shooter
+//                 alert(i); // должна выводить порядковый номер
+//             };
+//         shooters.push(shooter);
+//         i++;
+//     }
+//
+//     return shooters;
+// }
+//
+// let army = makeArmy();
+//
+// army[0](); // у 0-го стрелка будет номер 10
+// army[5]();
 
-    let i = 0;
-    while (i < 10) {
-        let a = i
-        let shooter = function() { // функция shooter
-            alert( a ); // должна выводить порядковый номер
-        };
-        shooters.push(shooter);
-        i++;
-    }
 
-    return shooters;
+function countSmileys(arr) {
+    return arr.filter(el => (el[0] === ';' || el[0] === ':')
+        && ((el[1] === ('-') || el[1] === ('~')) && (el[2] === 'D' || el[2] === ')'))
+        || (el[0] === ';' || el[0] === ':')&&(el[1] === 'D' || el[1] === ')')).length
 }
 
-let army = makeArmy();
-
-army[0](); // у 0-го стрелка будет номер 10
-army[5]();
+console.log(countSmileys([":---)", "))", ";~~D", ";D"]))
