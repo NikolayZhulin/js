@@ -2028,10 +2028,26 @@ let list = {
 // army[5]();
 
 
-function countSmileys(arr) {
-    return arr.filter(el => (el[0] === ';' || el[0] === ':')
-        && ((el[1] === ('-') || el[1] === ('~')) && (el[2] === 'D' || el[2] === ')'))
-        || (el[0] === ';' || el[0] === ':')&&(el[1] === 'D' || el[1] === ')')).length
+// function countSmileys(arr) {
+//     return arr.filter(el => (el[0] === ';' || el[0] === ':')
+//         && ((el[1] === ('-') || el[1] === ('~')) && (el[2] === 'D' || el[2] === ')'))
+//         || (el[0] === ';' || el[0] === ':')&&(el[1] === 'D' || el[1] === ')')).length
+// }
+//
+// console.log(countSmileys([":---)", "))", ";~~D", ";D"]))
+
+function bouncingBall(h, bounce, window) {
+    if (h > 0 && (bounce > 0 && bounce < 1) && window < h) {
+        let a =h;
+        let countDown=1;
+        while (a*bounce > window) {
+            a = a * bounce;
+            countDown = countDown+2;
+        }
+        return countDown;
+    } else {
+        return -1;
+    }
 }
 
-console.log(countSmileys([":---)", "))", ";~~D", ";D"]))
+console.log(bouncingBall(30.0, 0.66, 1.5))
