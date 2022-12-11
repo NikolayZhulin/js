@@ -2053,158 +2053,170 @@ let list = {
 // console.log(bouncingBall(30.0, 0.66, 1.5))
 
 
-const students = [
-    {
-        name: "Bob",
-        age: 22,
-        isMarried: true,
-        scores: 85,
-    },
-    {
-        name: "Alex",
-        age: 21,
-        isMarried: true,
-        scores: 90,
-    },
-    {
-        name: "Nick",
-        age: 20,
-        isMarried: false,
-        scores: 120,
-    },
-    {
-        name: "John",
-        age: 19,
-        isMarried: false,
-        scores: 100,
-    },
-    {
-        name: "Helen",
-        age: 20,
-        isMarried: false,
-        scores: 110,
-    },
-    {
-        name: "Ann",
-        age: 20,
-        isMarried: false,
-        scores: 105,
-    },
-];
+// const students = [
+//     {
+//         name: "Bob",
+//         age: 22,
+//         isMarried: true,
+//         scores: 85,
+//     },
+//     {
+//         name: "Alex",
+//         age: 21,
+//         isMarried: true,
+//         scores: 90,
+//     },
+//     {
+//         name: "Nick",
+//         age: 20,
+//         isMarried: false,
+//         scores: 120,
+//     },
+//     {
+//         name: "John",
+//         age: 19,
+//         isMarried: false,
+//         scores: 100,
+//     },
+//     {
+//         name: "Helen",
+//         age: 20,
+//         isMarried: false,
+//         scores: 110,
+//     },
+//     {
+//         name: "Ann",
+//         age: 20,
+//         isMarried: false,
+//         scores: 105,
+//     },
+// ];
+//
+// const user = {
+//     name: "Bob",
+//     age: 23,
+//     isMarried: false,
+//     friends: ["Alex", "Nick", "John"],
+// };
+//
+// // Shallow user copy
+// let copyUser= {...user}
+//
+// console.log(user === copyUser)
+//
+// //Deep user copy
+//
+// let deepUserCopy={
+//     ...user,
+//     friends: [...user.friends]
+// }
+//
+// console.log(user.friends=== deepUserCopy)
+//
+//  // Shallow students array copy
+//
+// let studentsCopy = [...students]
+//
+// console.log(students === studentsCopy)
+//
+// //Deep students array copy
+//
+// let deepStudentsCopy = students.map(student=> ({...student}))
+//
+// console.log(students === deepStudentsCopy)
+// console.log(students[0]===deepStudentsCopy[0]);
+// console.log(students)
+// console.log(deepStudentsCopy)
+//
+// // students name sort
+//
+// let sortStudentsByNames = students.map(student=>({...student})).sort((a,b)=>a.name>b.name?1:-1)
+// console.log(students)
+// console.log(sortStudentsByNames)
+//
+// //students score sort
+// let sortStudentsByScores = students.map(student=>({...student})).sort((a,b)=>a.scores-b.scores)
+// console.log(students)
+// console.log(sortStudentsByScores)
+//
+// //Students scores >100
+//
+// let bestStudents = students.filter(student=> student.scores>100)
+// console.log(bestStudents)
+// console.log(students)
+//
+// //best students
+//
+// let spliceStudents = students.map(student=>({...student})).sort((a,b)=>b.scores-a.scores).splice(0,3)
+// console.log(spliceStudents)
+//
+// let concatStudents = [...deepStudentsCopy,...bestStudents]
+// console.log(concatStudents)
+//
+// // arr from not married students
+//
+// let notMarriedStudents = students.filter(student => !student.isMarried)
+// console.log(notMarriedStudents)
+//
+// //arr from students names
+//
+// let studentNames = students.map(student=>student.name)
+// console.log(studentNames)
+//
+// // string from students names
+//
+// console.log(studentNames.join(', '))
+//
+// //add key "isStudent"
+//
+// let studentsWithIsStudentKey = students.map(student=> ({...student, isStudent:true}))
+// console.log(studentsWithIsStudentKey)
+//
+// // Change married status for Nick
+//
+// let studentsWithMarriedNick = students.map(student=> student.name==='Nick'? {...student, isMarried:true}:student)
+// console.log(studentsWithMarriedNick)
+//
+// //Find a student named Ann
+//
+// let studentAnn = students.find(student=> student.name === 'Ann')
+// console.log(studentAnn)
+//
+// //Student who has the best score
+//
+// let highScoreStudent = students.reduce((acc, student)=>{
+//     console.log(1)
+//     return acc.scores>student.scores?acc:student
+// })
+// console.log(1)
+// console.log(highScoreStudent)
+// //Sum students scores
+//
+// let sumStudentsScores = students.reduce((sumScores, student)=>sumScores+student.scores,0)
+//
+// console.log(sumStudentsScores)
+//
+// //14.Напишите функцию addFriends, которая принимает параметром массив students и
+// // возвращает новый массив, при этом добавляет в каждому студенту свойство .friends,
+// // значением которого является массив имён всех остальных студентов из массива, за исключением
+// // собственного имени студента.
+// // Т.е. в друзьях у Боба Боба быть не должно.
+//
+// const addFriends = (students)=>{
+//     let friendsArr = students.map(student=>student.name);
+// return students.map(student=>({...student,friends:friendsArr.filter(friendName=> friendName!==student.name)}))
+// }
+//
+// console.log(addFriends(students))
 
-const user = {
-    name: "Bob",
-    age: 23,
-    isMarried: false,
-    friends: ["Alex", "Nick", "John"],
-};
-
-// Shallow user copy
-let copyUser= {...user}
-
-console.log(user === copyUser)
-
-//Deep user copy
-
-let deepUserCopy={
-    ...user,
-    friends: [...user.friends]
+function SeriesSum(n) {
+    let initialVal = n > 0 ? 1 : 0;
+    let k = 4;
+    for (let i = 0; i < n - 1; i++) {
+        initialVal = initialVal + 1 / k
+        k = k + 3
+    }
+    return initialVal.toFixed(2)
 }
 
-console.log(user.friends=== deepUserCopy)
-
- // Shallow students array copy
-
-let studentsCopy = [...students]
-
-console.log(students === studentsCopy)
-
-//Deep students array copy
-
-let deepStudentsCopy = students.map(student=> ({...student}))
-
-console.log(students === deepStudentsCopy)
-console.log(students[0]===deepStudentsCopy[0]);
-console.log(students)
-console.log(deepStudentsCopy)
-
-// students name sort
-
-let sortStudentsByNames = students.map(student=>({...student})).sort((a,b)=>a.name>b.name?1:-1)
-console.log(students)
-console.log(sortStudentsByNames)
-
-//students score sort
-let sortStudentsByScores = students.map(student=>({...student})).sort((a,b)=>a.scores-b.scores)
-console.log(students)
-console.log(sortStudentsByScores)
-
-//Students scores >100
-
-let bestStudents = students.filter(student=> student.scores>100)
-console.log(bestStudents)
-console.log(students)
-
-//best students
-
-let spliceStudents = students.map(student=>({...student})).sort((a,b)=>b.scores-a.scores).splice(0,3)
-console.log(spliceStudents)
-
-let concatStudents = [...deepStudentsCopy,...bestStudents]
-console.log(concatStudents)
-
-// arr from not married students
-
-let notMarriedStudents = students.filter(student => !student.isMarried)
-console.log(notMarriedStudents)
-
-//arr from students names
-
-let studentNames = students.map(student=>student.name)
-console.log(studentNames)
-
-// string from students names
-
-console.log(studentNames.join(', '))
-
-//add key "isStudent"
-
-let studentsWithIsStudentKey = students.map(student=> ({...student, isStudent:true}))
-console.log(studentsWithIsStudentKey)
-
-// Change married status for Nick
-
-let studentsWithMarriedNick = students.map(student=> student.name==='Nick'? {...student, isMarried:true}:student)
-console.log(studentsWithMarriedNick)
-
-//Find a student named Ann
-
-let studentAnn = students.find(student=> student.name === 'Ann')
-console.log(studentAnn)
-
-//Student who has the best score
-
-let highScoreStudent = students.reduce((acc, student)=>{
-    console.log(1)
-    return acc.scores>student.scores?acc:student
-})
-console.log(1)
-console.log(highScoreStudent)
-//Sum students scores
-
-let sumStudentsScores = students.reduce((sumScores, student)=>sumScores+student.scores,0)
-
-console.log(sumStudentsScores)
-
-//14.Напишите функцию addFriends, которая принимает параметром массив students и
-// возвращает новый массив, при этом добавляет в каждому студенту свойство .friends,
-// значением которого является массив имён всех остальных студентов из массива, за исключением
-// собственного имени студента.
-// Т.е. в друзьях у Боба Боба быть не должно.
-
-const addFriends = (students)=>{
-    let friendsArr = students.map(student=>student.name);
-return students.map(student=>({...student,friends:friendsArr.filter(friendName=> friendName!==student.name)}))
-}
-
-console.log(addFriends(students))
+console.log(SeriesSum(0))
