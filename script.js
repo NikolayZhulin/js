@@ -2209,14 +2209,28 @@ let list = {
 //
 // console.log(addFriends(students))
 
-function SeriesSum(n) {
-    let initialVal = n > 0 ? 1 : 0;
-    let k = 4;
-    for (let i = 0; i < n - 1; i++) {
-        initialVal = initialVal + 1 / k
-        k = k + 3
+// function SeriesSum(n) {
+//     let initialVal = n > 0 ? 1 : 0;
+//     let k = 4;
+//     for (let i = 0; i < n - 1; i++) {
+//         initialVal = initialVal + 1 / k
+//         k = k + 3
+//     }
+//     return initialVal.toFixed(2)
+// }
+//
+// console.log(SeriesSum(0))
+
+function digPow(n, p) {
+    let st = p
+    let arrOfNumbers = n.toString().split('');
+    let res = 0;
+    for (let i = 0; i < arrOfNumbers.length; i++) {
+        res = res + Math.pow(+arrOfNumbers[i], st);
+        st = st + 1;
     }
-    return initialVal.toFixed(2)
+    let result = Number.isInteger(res / n) ? res / n : -1
+    return result
 }
 
-console.log(SeriesSum(0))
+console.log(digPow(46288, 3)) //' 46288 --> 4³ + 6⁴+ 2⁵ + 8⁶ + 8⁷ = 2360688 = 46288 * 51'    89 --> 8¹ + 9² = 89 * 1
