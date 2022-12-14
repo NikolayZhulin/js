@@ -2221,16 +2221,52 @@ let list = {
 //
 // console.log(SeriesSum(0))
 
-function digPow(n, p) {
-    let st = p
-    let arrOfNumbers = n.toString().split('');
-    let res = 0;
-    for (let i = 0; i < arrOfNumbers.length; i++) {
-        res = res + Math.pow(+arrOfNumbers[i], st);
-        st = st + 1;
+// function digPow(n, p) {
+//     let st = p
+//     let arrOfNumbers = n.toString().split('');
+//     let res = 0;
+//     for (let i = 0; i < arrOfNumbers.length; i++) {
+//         res = res + Math.pow(+arrOfNumbers[i], st);
+//         st = st + 1;
+//     }
+//     let result = Number.isInteger(res / n) ? res / n : -1
+//     return result
+// }
+//
+// console.log(digPow(46288, 3))
+
+// const isEvenIndexSumGreater = (arr) => {
+//     //...здесь пишем код.
+//     // В return стоит "заглушка", чтоб typescript не ругался
+//     let sum1 = arr.reduce((acc, el, ind) => (ind === 0 || ind % 2 === 0) ? acc + el : acc, 0)
+//     let sum2 = arr.reduce((acc, el, ind) => ind % 2 !== 0 ? acc + el : acc, 0)
+//     console.log(sum1)
+//     console.log(sum2)
+//     return sum1 < sum2;
+// }
+// isEvenIndexSumGreater([1,2, 1, 2, 1,2,1])
+
+// function getSquarePositiveIntegers(array){
+//     //...здесь пишем код.
+//     // В return стоит "заглушка", чтоб typescript не ругался
+//     return array.reduce((acc, el) => el % 1===0 && el > 0 ? [...acc, el * el] : acc, [])
+// }
+//
+// console.log(getSquarePositiveIntegers([4, 5.6, -9.8, 3.14, 10, 6, 8.34, -2]))
+
+function getBanknoteList(amountOfMoney) {
+    //...здесь пишем код.
+    // В return стоит "заглушка", чтоб typescript не ругался
+    const banknotes = [1000, 500, 100, 50, 20, 10, 5, 2, 1]
+    let newMoney =  amountOfMoney
+    let newArr = [];
+    for(let  i =0;i<banknotes.length;i++){
+        while(newMoney>=banknotes[i]){
+            newMoney = newMoney-banknotes[i]
+            newArr.push(banknotes[i])
+        }
     }
-    let result = Number.isInteger(res / n) ? res / n : -1
-    return result
+    return newArr
 }
 
-console.log(digPow(46288, 3)) //' 46288 --> 4³ + 6⁴+ 2⁵ + 8⁶ + 8⁷ = 2360688 = 46288 * 51'    89 --> 8¹ + 9² = 89 * 1
+getBanknoteList(2500)
