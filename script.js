@@ -2254,19 +2254,84 @@ let list = {
 //
 // console.log(getSquarePositiveIntegers([4, 5.6, -9.8, 3.14, 10, 6, 8.34, -2]))
 
-function getBanknoteList(amountOfMoney) {
-    //...здесь пишем код.
-    // В return стоит "заглушка", чтоб typescript не ругался
-    const banknotes = [1000, 500, 100, 50, 20, 10, 5, 2, 1]
-    let newMoney =  amountOfMoney
+// function getBanknoteList(amountOfMoney) {
+//     //...здесь пишем код.
+//     // В return стоит "заглушка", чтоб typescript не ругался
+//     const banknotes = [1000, 500, 100, 50, 20, 10, 5, 2, 1]
+//     let newMoney =  amountOfMoney
+//     let newArr = [];
+//     for(let  i =0;i<banknotes.length;i++){
+//         while(newMoney>=banknotes[i]){
+//             newMoney = newMoney-banknotes[i]
+//             newArr.push(banknotes[i])
+//         }
+//     }
+//     return newArr
+// }
+//
+// getBanknoteList(2500)
+
+//
+// function twoSum(numbers, target) {
+//     let newArr = []
+//     for (let i = 0; i < numbers.length; i++) {
+//         for (let j = i; j < numbers.length; j++) {
+//             if (i !== j && numbers[i] + numbers[j] === target) {
+//                 newArr.push(i)
+//                 newArr.push(j)
+//                 break;
+//             }
+//         }
+//     }
+//     return newArr.slice(0,2)
+// }
+//
+// console.log(twoSum([486, 53, 56, -382, -292, -601, -193, 585, -870, 183, -841, -400, 656, 183, -573, -473, -767, 282, -339, 246, -642, 115, -531, 793, 999, -738, 260, -331, 389], -658))
+
+function towerBuilder(nFloors) {
     let newArr = [];
-    for(let  i =0;i<banknotes.length;i++){
-        while(newMoney>=banknotes[i]){
-            newMoney = newMoney-banknotes[i]
-            newArr.push(banknotes[i])
+    let stars = '*';
+    for (let i = 0; i < nFloors; i++) {
+        for (let j = 0; j < 2; j++) {
+            if (i >= 1) {
+                stars = stars + '*';
+            } else {
+                stars = '*';
+            }
         }
+        newArr.push(stars);
     }
-    return newArr
+    for (let i = 0; i < newArr.length; i++) {
+        let spaceCount = newArr[newArr.length - 1].length - newArr[i].length;
+        let spaces = '';
+        for (let j = 0; j < spaceCount / 2; j++) {
+            spaces = spaces + ' '
+        }
+        newArr[i] = newArr[i].concat(spaces)
+        newArr[i] = spaces.concat(newArr[i])
+    }
+    return newArr;
 }
 
-getBanknoteList(2500)
+console.log(towerBuilder(3))
+
+
+
+
+// function towerBuilder(nFloors) {
+//     let starsField = [];
+//     let downFloor = 1
+//     for (let i = 1; i < nFloors; i++) {
+//         downFloor = downFloor + 2
+//     }
+//     for (let i = 0; i < nFloors; i++) {
+//         let a = ''
+//         for (let j = 0; j <= downFloor; j++) {
+//             a =
+//         }
+//         starsField.unshift(a)
+//     }
+// }
+//
+//
+// console.log(towerBuilder(4))
