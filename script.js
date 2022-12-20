@@ -2288,50 +2288,68 @@ let list = {
 //
 // console.log(twoSum([486, 53, 56, -382, -292, -601, -193, 585, -870, 183, -841, -400, 656, 183, -573, -473, -767, 282, -339, 246, -642, 115, -531, 793, 999, -738, 260, -331, 389], -658))
 
-function towerBuilder(nFloors) {
-    let newArr = [];
-    let stars = '*';
-    for (let i = 0; i < nFloors; i++) {
-        for (let j = 0; j < 2; j++) {
-            if (i >= 1) {
-                stars = stars + '*';
-            } else {
-                stars = '*';
-            }
-        }
-        newArr.push(stars);
-    }
-    for (let i = 0; i < newArr.length; i++) {
-        let spaceCount = newArr[newArr.length - 1].length - newArr[i].length;
-        let spaces = '';
-        for (let j = 0; j < spaceCount / 2; j++) {
-            spaces = spaces + ' '
-        }
-        newArr[i] = newArr[i].concat(spaces)
-        newArr[i] = spaces.concat(newArr[i])
-    }
-    return newArr;
-}
-
-console.log(towerBuilder(3))
-
-
-
-
 // function towerBuilder(nFloors) {
-//     let starsField = [];
-//     let downFloor = 1
-//     for (let i = 1; i < nFloors; i++) {
-//         downFloor = downFloor + 2
-//     }
+//     let newArr = [];
+//     let stars = '*';
 //     for (let i = 0; i < nFloors; i++) {
-//         let a = ''
-//         for (let j = 0; j <= downFloor; j++) {
-//             a =
+//         for (let j = 0; j < 2; j++) {
+//             if (i >= 1) {
+//                 stars = stars + '*';
+//             } else {
+//                 stars = '*';
+//             }
 //         }
-//         starsField.unshift(a)
+//         newArr.push(stars);
 //     }
+//     for (let i = 0; i < newArr.length; i++) {
+//         let spaceCount = newArr[newArr.length - 1].length - newArr[i].length;
+//         let spaces = '';
+//         for (let j = 0; j < spaceCount / 2; j++) {
+//             spaces = spaces + ' '
+//         }
+//         newArr[i] = newArr[i].concat(spaces)
+//         newArr[i] = spaces.concat(newArr[i])
+//     }
+//     return newArr;
+// }
+//
+// console.log(towerBuilder(3))
+
+// function queueTime(customers, n) {
+//
 // }
 //
 //
-// console.log(towerBuilder(4))
+// console.log(queueTime([10,2,3,3], 2))
+
+// function sumTo(num){
+//     if(num===1){
+//         return num
+//     }else{
+//         return  num + sumTo(num-1)
+//     }
+// }
+//
+// console.log(sumTo(100))
+//
+// function factorial(a){
+//     if(a === 1) return 1;
+//     return a * factorial(a - 1);
+// }
+//
+// console.log(factorial(4))
+
+// function fib(s) {
+//     if (s === 0) return 0
+//     if (s === 1) return 1;
+//     return fib(s - 1) + fib(s - 2)
+// }
+//
+// console.log(fib(5))
+
+function fib(s) {
+    if (s === 0) return 0
+    if (s === 1) return 1;
+    return fib(s - 1) + fib(s - 2)
+}
+
