@@ -2347,9 +2347,39 @@ let list = {
 //
 // console.log(fib(5))
 
-function fib(s) {
-    if (s === 0) return 0
-    if (s === 1) return 1;
-    return fib(s - 1) + fib(s - 2)
+// function fib(s) {
+//     let a = 0;
+//     let b = 1;
+//     let c;
+//     for (let i = 0; i < s-1; i++) {
+//         c = a + b;
+//         [a, b] = [b, c];
+//     }
+//     return c;
+// }
+//
+// console.log(fib(77))
+//
+let qwer = {
+    value: 1,
+    next: {
+        value: 2,
+        next: {
+            value: 3,
+            next: {
+                value: 4,
+                next: null
+            }
+        }
+    }
+};
+
+const printList = (a) => {
+    if (a.next) {
+         printList(a.next)
+
+    }
+    console.log(a.value)
 }
 
+console.log(printList(qwer))
