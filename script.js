@@ -2315,13 +2315,6 @@ let list = {
 //
 // console.log(towerBuilder(3))
 
-// function queueTime(customers, n) {
-//
-// }
-//
-//
-// console.log(queueTime([10,2,3,3], 2))
-
 // function sumTo(num){
 //     if(num===1){
 //         return num
@@ -2360,26 +2353,44 @@ let list = {
 //
 // console.log(fib(77))
 //
-let qwer = {
-    value: 1,
-    next: {
-        value: 2,
-        next: {
-            value: 3,
-            next: {
-                value: 4,
-                next: null
-            }
-        }
-    }
-};
+// let qwer = {
+//     value: 1,
+//     next: {
+//         value: 2,
+//         next: {
+//             value: 3,
+//             next: {
+//                 value: 4,
+//                 next: null
+//             }
+//         }
+//     }
+// };
+//
+// const printList = (a) => {
+//     if (a.next) {
+//          printList(a.next)
+//
+//     }
+//     console.log(a.value)
+// }
+//
+// console.log(printList(qwer))
 
-const printList = (a) => {
-    if (a.next) {
-         printList(a.next)
+function count(string) {
+    let obj = {};
+    let a = string.split('');
 
+    for (let el of a) {
+        obj[el] = 0;
     }
-    console.log(a.value)
+
+    for (let i = 0; i < a.length; i++) {
+        obj[a[i]] = obj[a[i]] + 1
+    }
+
+    return obj
+
 }
 
-console.log(printList(qwer))
+console.log(count('abafafff'))
