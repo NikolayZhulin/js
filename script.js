@@ -2377,20 +2377,36 @@ let list = {
 //
 // console.log(printList(qwer))
 
-function count(string) {
-    let obj = {};
-    let a = string.split('');
+// function count(string) {
+//     let obj = {};
+//     let a = string.split('');
+//
+//     for (let el of a) {
+//         obj[el] = 0;
+//     }
+//
+//     for (let i = 0; i < a.length; i++) {
+//         obj[a[i]] = obj[a[i]] + 1
+//     }
+//
+//     return obj
+//
+// }
+//
+// console.log(count('abafafff'))
 
-    for (let el of a) {
-        obj[el] = 0;
+function duplicateCount(text) {
+    let arr = [];
+    let set = new Set();
+    let textArr = text.toLowerCase().split('')
+    for (let i = 0; i < textArr.length; i++) {
+        if(!arr.includes(textArr[i])){
+            arr.push(textArr[i])
+        }else{
+            set.add(textArr[i])
+        }
     }
-
-    for (let i = 0; i < a.length; i++) {
-        obj[a[i]] = obj[a[i]] + 1
-    }
-
-    return obj
-
+    return set.size
 }
 
-console.log(count('abafafff'))
+console.log(duplicateCount("abcdefghijklmnopqrstuvwxyzbaaAAB"))
