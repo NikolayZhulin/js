@@ -2395,18 +2395,116 @@ let list = {
 //
 // console.log(count('abafafff'))
 
-function duplicateCount(text) {
-    let arr = [];
-    let set = new Set();
-    let textArr = text.toLowerCase().split('')
-    for (let i = 0; i < textArr.length; i++) {
-        if(!arr.includes(textArr[i])){
-            arr.push(textArr[i])
-        }else{
-            set.add(textArr[i])
-        }
-    }
-    return set.size
-}
+// function duplicateCount(text) {
+//     let arr = [];
+//     let set = new Set();
+//     let textArr = text.toLowerCase().split('')
+//     for (let i = 0; i < textArr.length; i++) {
+//         if(!arr.includes(textArr[i])){
+//             arr.push(textArr[i])
+//         }else{
+//             set.add(textArr[i])
+//         }
+//     }
+//     return set.size
+// }
+//
+// console.log(duplicateCount("abcdefghijklmnopqrstuvwxyzbaaAAB"))
 
-console.log(duplicateCount("abcdefghijklmnopqrstuvwxyzbaaAAB"))
+
+// function wave(str) {
+//     let arr = []
+//     for (let i = 0; i < str.length; i++) {
+//         console.log(str.split('')[i])
+//         if (str.split('')[i]) {
+//             arr.push(str)
+//         }
+//     }
+//     console.log(arr)
+//     let arr2 = []
+//     for (let i = 0; i < arr[0].length; i++) {
+//         arr2.push(str[i].toUpperCase())
+//     }
+//   let arrTwoWords = arr[0].split(' ')
+//
+//     console.log(arrTwoWords)
+//     for(let i = 0 ; i< arr[i].split(' '); i++){
+//         for(let j = 0; j< arr[i][i].length;j++){
+//             arr[i] = arr[i].replace(arr[i][j], arr2[i])
+//         }
+//
+//     }
+//     console.log(arr2)
+//     return arr;
+// }
+//
+// console.log(wave("two words"))
+
+// function wave(str) {
+//     let arr = str.split('')
+//     let arr2 = []
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = 0; j < arr.length; j++) {
+//             arr2.push()
+//         }
+//     }
+// }
+
+
+// const wave = (word) => {
+//     let arr = word.split(' ')
+//     let arr2 = [];
+//     let arr3 = []
+//     for (let i = 0; i < arr.length; i++) {
+//         arr2.push(arr[i].split(''))
+//         for (let j = 0; j < arr[i].length; j++) {
+//             arr3.push(arr2[i][j].toUpperCase())
+//             // arr3.push(arr2[i].split(''))
+//         }
+//     }
+//     arr3.map((el,ind)=> word[i])
+//     console.log(arr)
+//     console.log(arr2)
+//     console.log(arr3)
+// }
+//
+//
+// const wave = (word) => {
+//     return word.reduce
+// }
+//
+
+
+// const wave = (word) =>{
+//     let wordSplitOfUpLetter = word.toUpperCase().split('')
+//     let arr = [];
+//    let sss = word.split(' ')
+//     for(let i = 0; i< sss.length; i++){
+//         for(let j = 0 ; j<sss[i].split('').length;j++ ){
+//             sss[i].split('')[j] = wordSplitOfUpLetter[i]
+//             console.log(sss[i])
+//             arr.push(sss[i])
+//         }
+//     }
+    // for(let i = 0 ; i<wordSplitOfUpLetter.length; i++){
+    //     arr.push(word.split()[0].replace(word[i], wordSplitOfUpLetter[i]))
+    //     console.log(word.split()[0])
+    //     console.log(word[i])
+    //     console.log(wordSplitOfUpLetter[i])
+    // }
+    // console.log(arr)
+//     return arr.filter(el => el !== el.toLowerCase())
+// }
+//
+//
+// console.log(wave("qwqq dcsd"))
+
+
+// Task 02
+// реализовать счетчик counter в виде объекта со следующими методами:
+// get current count; - выводит текущее значение счетчика
+// increment; - увеличивает значение счетчика на 1
+// decrement; - уменьшает значение счетчика на 1
+// set current count; - принимает и присваивает значение счетчику
+// rest current count - устанавливает значение счетчика равным 0
+// все методы должны ссылаться на сам объект
