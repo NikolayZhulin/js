@@ -2486,13 +2486,13 @@ let list = {
 //             arr.push(sss[i])
 //         }
 //     }
-    // for(let i = 0 ; i<wordSplitOfUpLetter.length; i++){
-    //     arr.push(word.split()[0].replace(word[i], wordSplitOfUpLetter[i]))
-    //     console.log(word.split()[0])
-    //     console.log(word[i])
-    //     console.log(wordSplitOfUpLetter[i])
-    // }
-    // console.log(arr)
+// for(let i = 0 ; i<wordSplitOfUpLetter.length; i++){
+//     arr.push(word.split()[0].replace(word[i], wordSplitOfUpLetter[i]))
+//     console.log(word.split()[0])
+//     console.log(word[i])
+//     console.log(wordSplitOfUpLetter[i])
+// }
+// console.log(arr)
 //     return arr.filter(el => el !== el.toLowerCase())
 // }
 //
@@ -2508,3 +2508,97 @@ let list = {
 // set current count; - принимает и присваивает значение счетчику
 // rest current count - устанавливает значение счетчика равным 0
 // все методы должны ссылаться на сам объект
+
+// let counter = {
+//     counter: 0,
+//     getCurrentCount: function () {
+//         return this.counter
+//     },
+//     increment: function () {
+//         this.counter = this.counter + 1;
+//         return this
+//     },
+//     decrement: function () {
+//         this.counter = this.counter - 1;
+//         return this
+//     },
+//     setCurrentCount: function (newCount) {
+//         this.counter = newCount
+//         return this
+//     },
+//     restCurrentCount: function () {
+//         this.counter = 0
+//         return this
+//     },
+// }
+//
+// console.log(counter.setCurrentCount(10).increment().increment().increment().decrement().getCurrentCount())
+//
+// // Task 04
+// // Написать функцию конструктор myFirstConstructorFunc которая принимает 2 параметра name и age и возвращает объект
+// // у которого будут эти свойства и метод greeting из Task 01\
+//
+// function MyFirstConstructorFunc(name, age) {
+//     this.name = name;
+//     this.age = age;
+//     this.greeting = function () {
+//         return `my name is ${this.name}. I am ${this.age}`
+//     };
+// }
+//
+// let func = new MyFirstConstructorFunc('nickolay', 10)
+//
+// console.log(func.greeting())
+// console.log(func.age)
+// console.log(func.name)
+//
+//
+//
+// let One = {name: 'One'};
+// let Two = {
+//     name: 'Two',
+//     sayHello: function () {
+//         console.log(`Hello, my name is ${this.name}`)
+//     }
+// };
+//
+// Two.sayHello.bind(One)()
+//
+// // Task 06
+// // создайте объект helperObj у которого есть следующие методы:
+// // changeName - меняет значение у свойства name объекта на полученное значение
+// // setAge - устанавливает полученное значение в свойство age объекта
+// // greeting - используется функция sayHello из Task 05
+// // можно использовать @ts-ignore
+//
+// let helperObj={
+//     name:'OLEG',
+//     age:10,
+//     changeName:function(newName){
+//         this.name = newName
+//     },
+//     setAge:function(newAge){
+//         this.age = newAge
+//     },
+//     greeting: Two.sayHello,
+// }
+
+function sumDigPow(a, b) {
+    let arr = [];
+
+    for (let i = a; i <= b; i++) {
+        let splitA = i.toString().split('')
+        let sumNum = 0
+        console.log(splitA)
+        for (let j = 0; j < splitA.length; j++) {
+            sumNum = sumNum + Math.pow(+splitA[j], j + 1)
+        }
+        if (sumNum === i) {
+            arr.push(i)
+        }
+    }
+    return arr
+}
+
+console.log(sumDigPow(1, 150))
+
