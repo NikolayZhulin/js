@@ -2583,22 +2583,28 @@ let list = {
 //     greeting: Two.sayHello,
 // }
 
-function sumDigPow(a, b) {
-    let arr = [];
+// function sumDigPow(a, b) {
+//     let arr = [];
+//
+//     for (let i = a; i <= b; i++) {
+//         let splitA = i.toString().split('')
+//         let sumNum = 0
+//         console.log(splitA)
+//         for (let j = 0; j < splitA.length; j++) {
+//             sumNum = sumNum + Math.pow(+splitA[j], j + 1)
+//         }
+//         if (sumNum === i) {
+//             arr.push(i)
+//         }
+//     }
+//     return arr
+// }
+//
+// console.log(sumDigPow(1, 150))
 
-    for (let i = a; i <= b; i++) {
-        let splitA = i.toString().split('')
-        let sumNum = 0
-        console.log(splitA)
-        for (let j = 0; j < splitA.length; j++) {
-            sumNum = sumNum + Math.pow(+splitA[j], j + 1)
-        }
-        if (sumNum === i) {
-            arr.push(i)
-        }
-    }
-    return arr
+function rowSumOddNumbers(n) {
+return Math.pow(n,3)
 }
 
-console.log(sumDigPow(1, 150))
 
+console.log(rowSumOddNumbers(4))
