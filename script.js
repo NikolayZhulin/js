@@ -2602,9 +2602,19 @@ let list = {
 //
 // console.log(sumDigPow(1, 150))
 
-function rowSumOddNumbers(n) {
-return Math.pow(n,3)
+// function rowSumOddNumbers(n) {
+// return Math.pow(n,3)
+// }
+//
+//
+// console.log(rowSumOddNumbers(4))
+
+function deleteNth(arr,x) {
+    let cache = {};
+    return arr.filter(function(n) {
+        cache[n] = (cache[n]||0) + 1;
+        return cache[n] <= x;
+    });
 }
 
-
-console.log(rowSumOddNumbers(4))
+console.log(deleteNth([1, 2, 3, 1, 2, 1, 2, 3], 2))
