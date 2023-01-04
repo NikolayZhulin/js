@@ -2609,12 +2609,85 @@ let list = {
 //
 // console.log(rowSumOddNumbers(4))
 
-function deleteNth(arr,x) {
-    let cache = {};
-    return arr.filter(function(n) {
-        cache[n] = (cache[n]||0) + 1;
-        return cache[n] <= x;
-    });
-}
+// function deleteNth(arr,x) {
+//     let cache = {};
+//     return arr.filter(function(n) {
+//         cache[n] = (cache[n]||0) + 1;
+//         return cache[n] <= x;
+//     });
+// }
+//
+// console.log(deleteNth([1, 2, 3, 1, 2, 1, 2, 3], 2))
 
-console.log(deleteNth([1, 2, 3, 1, 2, 1, 2, 3], 2))
+//
+// function findEvenIndex(arr) {
+//     return arr.findIndex((el, ind, arr) => {
+//        return arr.slice(0, ind).reduce((acc, el) => acc + el, 0) === arr.slice(ind+1, arr.length).reduce((acc, el) => acc + el, 0)
+//     })
+// }
+//
+//
+// console.log(findEvenIndex([1, 2, 3, 4, 3, 2, 1]))
+
+// function getSortArr(arr){
+//     for(let i=0; i< arr.length; i++){
+//         for(let j= i ; j <arr.length-1-i; j++ ){
+//             if(arr[j]> arr[j+1]){
+//                 [arr[j+1], arr[j]] = [arr[j], arr[j+1]]
+//             }
+//         }
+//     }
+//     return arr
+// }
+//
+// console.log(getSortArr([3,1,2,2,3,4,6]))
+
+// function isValidWalk(walk) {
+// if(walk.length<10) return false
+//     //initiate person starting point
+//     let person = [0, 0]
+//     //establish what the ending point must be
+//     let finalDestination = [0, 0]
+//
+//     let north = [0, 1]
+//     let east = [1, 0]
+//     let south = [0, -1]
+//     let west = [-1, 0]
+//
+//     //as long as the length of the array is 10 or less, continue walk
+//     for (let i = 0; i <= 10; i++) {
+//         //if the letter in the array is "n", move north
+//         if (walk[i] === "n") {
+//             person[1] +=1
+//         }
+//         //if the letter in the array is "e", move east
+//         if (walk[i] === "e") {
+//           person[0] +=1
+//
+//         }
+//         //if the letter in the array is "s", move south
+//         if (walk[i] === "s") {
+//             person[1] -=1
+//
+//         }
+//         //if the letter in the array is "w", move west
+//         if (walk[i] === "w") {
+//             person[0] -=1
+//         }
+//     }
+//     console.log(person)
+//     console.log(finalDestination)
+//     if (person[0] === finalDestination[0] &&person[1] === finalDestination[1] ) {
+//         return true;
+//     }
+//     else {
+//         return false;
+//     }
+//
+// }
+//
+// console.log(isValidWalk(['w','n']))
+
+function friend(friends){
+    return friends.filter(f=> f.length ===4)
+}
