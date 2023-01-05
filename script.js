@@ -2688,6 +2688,22 @@ let list = {
 //
 // console.log(isValidWalk(['w','n']))
 
-function friend(friends){
-    return friends.filter(f=> f.length ===4)
+function friend(friends) {
+    return friends.filter(f => f.length === 4)
 }
+
+function alphabetPosition(text) {
+    let arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+   return text.split('').reduce((acc,letter)=>{
+       console.log(arr.indexOf(letter))
+        if(arr.includes(letter.toLowerCase())){
+           acc.push(arr.indexOf(letter.toLowerCase())+1)
+            return acc
+        }else{
+            return acc
+        }
+    },[]).join(' ')
+}
+
+
+console.log(alphabetPosition('abcdefghijklmnopqrstuvwxyz'))
