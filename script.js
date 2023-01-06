@@ -2748,3 +2748,33 @@ let list = {
 // getUserByID(5)
 //     .then(user=> console.log(user))
 //     .catch(err=> console.log(err))
+
+// function comp(array1, array2) {
+//
+//     if(!array2 || !array1) return false
+//     let newArr = [];
+//     array1.forEach((el) => newArr.push(el * el))
+//
+//     let newArr2 = [...array2];
+//
+//     for (let i = newArr2.length-1; i >= 0; i--) {
+//
+//         for (let j = 0; j < newArr.length; j++) {
+//             if (newArr2[i] === newArr[j]) {
+//                 newArr2.splice(i, 1)
+//                 newArr.splice(j, 1)
+//             }
+//
+//         }
+//     }
+//
+//         return newArr[0] === newArr2[0]
+//
+// }
+//
+//
+// let a = [121, 144, 19, 161, 19, 144, 19, 11]
+// let b = [231, 14641, 20736, 361, 25921, 361, 20736, 361]
+// console.log(comp(a, b))
+//
+// let r = [1]
