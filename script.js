@@ -2688,22 +2688,63 @@ let list = {
 //
 // console.log(isValidWalk(['w','n']))
 
-function friend(friends) {
-    return friends.filter(f => f.length === 4)
-}
+// function friend(friends) {
+//     return friends.filter(f => f.length === 4)
+// }
+//
+// function alphabetPosition(text) {
+//     let arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+//    return text.split('').reduce((acc,letter)=>{
+//        console.log(arr.indexOf(letter))
+//         if(arr.includes(letter.toLowerCase())){
+//            acc.push(arr.indexOf(letter.toLowerCase())+1)
+//             return acc
+//         }else{
+//             return acc
+//         }
+//     },[]).join(' ')
+// }
+//
+//
+// console.log(alphabetPosition('abcdefghijklmnopqrstuvwxyz'))
+// const wait=(n)=>{
+//     return new Promise((res)=>{
+//         setTimeout(()=>{res()},n)
+//     })
+//
+// }
+//
+// async function run(){
+//     await wait(1000)
+//     console.log(1)
+//     await wait(1000)
+//     console.log(2)
+//     await wait(1000)
+//     console.log(3)
+//
+// }
+//
+// run()
 
-function alphabetPosition(text) {
-    let arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-   return text.split('').reduce((acc,letter)=>{
-       console.log(arr.indexOf(letter))
-        if(arr.includes(letter.toLowerCase())){
-           acc.push(arr.indexOf(letter.toLowerCase())+1)
-            return acc
-        }else{
-            return acc
-        }
-    },[]).join(' ')
-}
-
-
-console.log(alphabetPosition('abcdefghijklmnopqrstuvwxyz'))
+// function getUserByID(id) {
+//     const users = [
+//         {id: 1, name: 'Sabaka'},
+//         {id: 2, name: 'Mabaka'},
+//         {id: 3, name: 'Dubaka'},
+//     ]
+//
+//     return new Promise((res, rej) => {
+//         setTimeout(() => {
+//             let user = users.find(user=>user.id===id)
+//             if(user){
+//                 res(user)
+//             }else{
+//                 rej(new Error('user not found'))
+//             }
+//         }, 1000)
+//     })
+// }
+//
+// getUserByID(5)
+//     .then(user=> console.log(user))
+//     .catch(err=> console.log(err))
