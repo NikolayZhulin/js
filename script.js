@@ -2778,3 +2778,16 @@ let list = {
 // console.log(comp(a, b))
 //
 // let r = [1]
+
+function getSum(a, b) {
+    if (a === b) return a;
+    let sum = 0;
+    let lowVal = a>b?b:a
+    let bigVal = a>b?a:b
+    for (let i = lowVal; i <= bigVal; i++) {
+        sum = sum + i
+    }
+    return sum
+
+}
+getSum(1, 0)
