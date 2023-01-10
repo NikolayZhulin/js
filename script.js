@@ -2779,15 +2779,21 @@ let list = {
 //
 // let r = [1]
 
-function getSum(a, b) {
-    if (a === b) return a;
-    let sum = 0;
-    let lowVal = a>b?b:a
-    let bigVal = a>b?a:b
-    for (let i = lowVal; i <= bigVal; i++) {
-        sum = sum + i
-    }
-    return sum
+// function getSum(a, b) {
+// //     if (a === b) return a;
+// //     let sum = 0;
+// //     let lowVal = a>b?b:a
+// //     let bigVal = a>b?a:b
+// //     for (let i = lowVal; i <= bigVal; i++) {
+// //         sum = sum + i
+// //     }
+// //     return sum
+// //
+// // }
+// // getSum(1, 0)
 
+function removeSmallest(numbers) {
+    return numbers.filter((el,ind)=> ind !== numbers.findIndex(el=>el===Math.min(...numbers)))
 }
-getSum(1, 0)
+
+console.log(removeSmallest([1, 2, 3, 4,1, 5, 6]))
