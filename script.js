@@ -2798,25 +2798,34 @@ let list = {
 //
 // console.log(removeSmallest([1, 2, 3, 4,1, 5, 6]))
 
-let uniqueInOrder = function (iterable) {
+// let uniqueInOrder = function (iterable) {
+//
+//     if(!iterable.length) return []
+//
+//     let arrFromIterable = typeof(iterable) === 'string'
+//         ? iterable.split('')
+//         : iterable;
+//
+//     console.log(arrFromIterable)
+//
+//     return arrFromIterable.map((el, ind) => el !== arrFromIterable[ind - 1] && ind !== 0
+//         ? `-${el}`
+//         : el)
+//         .join('')
+//         .split('-')
+//         .map(el =>{
+//             return isFinite(+el[0])? +el[0] : el[0]
+//         } )
+//
+// }
+//
+// console.log(uniqueInOrder([1,2,3,3,3]))
 
-    if(!iterable.length) return []
-
-    let arrFromIterable = typeof(iterable) === 'string'
-        ? iterable.split('')
-        : iterable;
-
-    console.log(arrFromIterable)
-
-    return arrFromIterable.map((el, ind) => el !== arrFromIterable[ind - 1] && ind !== 0
-        ? `-${el}`
-        : el)
+function duplicateEncode(word){
+    let arrFromWord = word.split('').map(el=> el.toLowerCase())
+    return arrFromWord.map(el=>arrFromWord.indexOf(el) === arrFromWord.lastIndexOf(el)? '(':')')
         .join('')
-        .split('-')
-        .map(el =>{
-            return isFinite(+el[0])? +el[0] : el[0]
-        } )
-
 }
 
-console.log(uniqueInOrder([1,2,3,3,3]))
+
+console.log(duplicateEncode("recede"))
